@@ -1,0 +1,1 @@
+kikit fab jlcpcb --assembly --schematic devboard.kicad_sch devboard.kicad_pcb ./build

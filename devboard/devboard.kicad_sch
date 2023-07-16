@@ -1,0 +1,48 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid e98f3a66-f56c-4102-a187-9f77f0709c0e)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 88.9 48.26) (size 33.02 29.21) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 8716d3db-0591-48d8-9590-26475ee045ce)
+    (property "Sheetname" "Target" (at 88.9 47.5484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "target.kicad_sch" (at 88.9 78.0546 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "devboard"
+        (path "/e98f3a66-f56c-4102-a187-9f77f0709c0e" (page "3"))
+      )
+    )
+  )
+
+  (sheet (at 49.53 48.26) (size 33.02 29.21) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid ff3d6961-d155-4b3a-b0e1-03b5581e734c)
+    (property "Sheetname" "Glitcher" (at 49.53 47.5484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "glitcher.kicad_sch" (at 49.53 78.0546 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "devboard"
+        (path "/e98f3a66-f56c-4102-a187-9f77f0709c0e" (page "2"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
