@@ -40,6 +40,12 @@ Src/main.c \
 Src/gpio.c \
 Src/i2c.c \
 Src/usart.c \
+Src/print.c \
+Src/chall1.c \
+Src/chall2.c \
+Src/chall3.c \
+Src/chall4.c \
+Src/debug.c \
 Src/stm32f1xx_it.c \
 Src/stm32f1xx_hal_msp.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c \

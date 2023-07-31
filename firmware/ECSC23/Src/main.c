@@ -24,7 +24,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "print.h"
+#include "chall1.h"
+#include "chall2.h"
+#include "chall3.h"
+#include "chall4.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,7 +55,6 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -90,7 +93,24 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  uint32_t buttons = GPIOB->IDR;
+  if (buttons & GPIO_PIN_0) {
+    uart_printf("Starting challenge 1\r\n");
+    chall1();
+  } else if (buttons & GPIO_PIN_1) {
+    uart_printf("Starting challenge 2\r\n");
+    chall2();
+  } else if (buttons & GPIO_PIN_2) {
+    uart_printf("Starting challenge 3\r\n");
+    chall3();
+  } else if (buttons & GPIO_PIN_3) {
+    uart_printf("Starting challenge 4\r\n");
+    chall4();
+  } else {
+    uart_printf("Press one of the 4 challenge buttons to start them\r\n");
+    HAL_Delay(1000);
+    NVIC_SystemReset();
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -100,6 +120,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
+    HAL_Delay(500);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
+    HAL_Delay(500);
   }
   /* USER CODE END 3 */
 }
@@ -143,7 +167,6 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
 /* USER CODE END 4 */
 
 /**
