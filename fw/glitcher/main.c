@@ -34,6 +34,8 @@
 #include "cdc_sump.h"
 
 #include "usb_descriptors.h"
+#include "adc.h"
+#include "hardware/pio.h"
 
 //--------------------------------------------------------------------+
 // MACRO CONSTANT TYPEDEF PROTYPES
@@ -59,15 +61,7 @@ void led_blinking_task(void);
 void hid_task(void);
 
 
-void init_adc() {
-  gpio_init(CLK_PIN);
-  gpio_set_dir(CLK_PIN, GPIO_OUT);
-  
-  for (int i = 0; i < 10; i++) {
-    gpio_init(D0+i);
-    gpio_set_dir(D0, GPIO_IN);
-  }
-}
+
 
 /*------------- MAIN -------------*/
 int main(void)
@@ -75,24 +69,19 @@ int main(void)
   board_init();
   tusb_init();
   cdc_sump_init();
-  init_adc();
+  adc_pio_init();
+  gpio_pio_init();
   uint32_t last = board_millis();
-  uint32_t state = 0;
   while (1)
   {
     tud_task(); // tinyusb device task
     led_blinking_task();
     cdc_sump_task();
-
     if (last != board_millis()) {
-      gpio_put(CLK_PIN, state);
-      if (state == 0) {
-        int data = (gpio_get_all() >> D0) & 0x03FF;
-        char buf[16];
-        int len = snprintf(buf, 15, "%d\r\n", data);
-        tud_cdc_n_write_str(1, buf);
-      }
-      state = !state;
+      int data = ADC_PIO->rxf[ADC_PIO_SM] >> 22;
+      char buf[16];
+      int len = snprintf(buf, 15, "0x%08x\r\n", data);
+      tud_cdc_n_write_str(1, buf);
       last = board_millis();
     }
   }
