@@ -18,6 +18,8 @@ add_executable(hello_world
     main.c
     usb_descriptors.c
     cdc_sump.c
+    adc.c
+    output.c
 )
 add_definitions(-DPICO_DEFAULT_LED_PIN=26)
 target_include_directories(hello_world PUBLIC
