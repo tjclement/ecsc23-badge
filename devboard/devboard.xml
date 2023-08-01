@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/media/data/git/badge_ecsc/devboard/devboard.kicad_sch</source>
-    <date>zo 16 jul 2023 12:08:52 CEST</date>
-    <tool>Eeschema 7.0.6</tool>
+    <source>/Users/tom/Git/BadgeGlitch/devboard/devboard.kicad_sch</source>
+    <date>2023 July 19, Wednesday 16:25:58</date>
+    <tool>Eeschema 7.0.5-0</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
@@ -1160,7 +1160,7 @@
       <property name="ki_description" value="Dual Operational Amplifiers, DIP-8/SOIC-8/TSSOP-8/VSSOP-8"/>
       <property name="ki_keywords" value="dual opamp"/>
       <sheetpath names="/Glitcher/" tstamps="/ff3d6961-d155-4b3a-b0e1-03b5581e734c/"/>
-      <tstamps>d5e17581-203d-46fb-80e4-23f7ee5570c7 e93e9bb9-2b00-4670-85fe-3e1f249e622f 761c9bd4-501a-4f8b-91e3-1b230ecd0334</tstamps>
+      <tstamps>e93e9bb9-2b00-4670-85fe-3e1f249e622f d5e17581-203d-46fb-80e4-23f7ee5570c7 761c9bd4-501a-4f8b-91e3-1b230ecd0334</tstamps>
     </comp>
     <comp ref="U4">
       <value>W25Q128JVS</value>
@@ -2669,43 +2669,43 @@
   </libparts>
   <libraries>
     <library logical="Amplifier_Operational">
-      <uri>/app/extensions/Library/symbols//Amplifier_Operational.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Amplifier_Operational.kicad_sym</uri>
     </library>
     <library logical="CH340N">
-      <uri>/media/data/git/badge_ecsc/devboard/CH340N.kicad_sym</uri>
+      <uri>/Users/tom/Git/BadgeGlitch/devboard/CH340N.kicad_sym</uri>
     </library>
     <library logical="Connector">
-      <uri>/app/extensions/Library/symbols//Connector.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector.kicad_sym</uri>
     </library>
     <library logical="Connector_Generic">
-      <uri>/app/extensions/Library/symbols//Connector_Generic.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector_Generic.kicad_sym</uri>
     </library>
     <library logical="Device">
-      <uri>/app/extensions/Library/symbols//Device.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Device.kicad_sym</uri>
     </library>
     <library logical="MCU_RaspberryPi">
-      <uri>/app/extensions/Library/symbols//MCU_RaspberryPi.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//MCU_RaspberryPi.kicad_sym</uri>
     </library>
     <library logical="MCU_ST_STM32F1">
-      <uri>/app/extensions/Library/symbols//MCU_ST_STM32F1.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//MCU_ST_STM32F1.kicad_sym</uri>
     </library>
     <library logical="MS9280">
-      <uri>/media/data/git/badge_ecsc/devboard/MS9280.kicad_sym</uri>
+      <uri>/Users/tom/Git/BadgeGlitch/devboard/MS9280.kicad_sym</uri>
     </library>
     <library logical="Memory_EEPROM">
-      <uri>/app/extensions/Library/symbols//Memory_EEPROM.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Memory_EEPROM.kicad_sym</uri>
     </library>
     <library logical="Memory_Flash">
-      <uri>/app/extensions/Library/symbols//Memory_Flash.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Memory_Flash.kicad_sym</uri>
     </library>
     <library logical="Regulator_Linear">
-      <uri>/app/extensions/Library/symbols//Regulator_Linear.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Regulator_Linear.kicad_sym</uri>
     </library>
     <library logical="Switch">
-      <uri>/app/extensions/Library/symbols//Switch.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Switch.kicad_sym</uri>
     </library>
     <library logical="Transistor_FET">
-      <uri>/app/extensions/Library/symbols//Transistor_FET.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Transistor_FET.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
