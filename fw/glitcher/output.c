@@ -79,10 +79,12 @@ void gpio_pio_reset() {
 }
 
 void gpio_pio_fill() {
-    for (int i = 0; i < 4; i++) {
-        if (read[i] < write[i] && !pio_sm_is_tx_fifo_full(GPIO_PIO, i)) {
-            pio_sm_put(GPIO_PIO, i, commands[i][read[i]]);
-            read[i]++;
+    while(1) {
+        for (int i = 0; i < 4; i++) {
+            if (read[i] < write[i] && !pio_sm_is_tx_fifo_full(GPIO_PIO, i)) {
+                pio_sm_put(GPIO_PIO, i, commands[i][read[i]]);
+                read[i]++;
+            }
         }
     }
 }
@@ -93,9 +95,6 @@ void gpio_pio_start() {
         pio_sm_set_enabled(GPIO_PIO, i, false); //Disable SM
         pio_sm_clear_fifos(GPIO_PIO, i); //Flush FIFO's incase data is still present
         read[i] = 0; //Reset read index
-    }
-    for (int i = 0; i < 8; i++) {   //Perform initial fill of tx fifo's
-        gpio_pio_fill();
     }
     for (int i = 0; i < 4; i++) {
         pio_sm_set_enabled(GPIO_PIO, i, true); //Activate SM

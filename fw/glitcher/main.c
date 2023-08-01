@@ -127,7 +127,7 @@ int parse_scpi_command(const char *command) {
         }
     }
 
-    token = strtok(NULL, " ");
+    token = strtok(NULL, ",");
     // Process each part of the command and store parameters
     while (token != NULL) {
         // If it's not the first token (command), store it as a parameter
