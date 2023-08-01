@@ -53,10 +53,10 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LED_POWER_Pin|EEPROM1_WC_Pin|EEPROM2_WC_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, EEPROM1_WC_Pin|EEPROM2_WC_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin|LED_SUCCESS_Pin|LED_TAMPER_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : PC13 PC14 PC15 */
   GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15;
@@ -68,9 +68,9 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PA0 PA1 PA2 PA3
+  /*Configure GPIO pins : PAPin PAPin PAPin PAPin
                            PAPin PAPin */
-  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
+  GPIO_InitStruct.Pin = LED_POWER_Pin|LED_RUNNING_Pin|LED_SUCCESS_Pin|LED_TAMPER_Pin
                           |EEPROM1_WC_Pin|EEPROM2_WC_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -84,7 +84,7 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PBPin PBPin PBPin PBPin */
-  GPIO_InitStruct.Pin = SW3_Pin|SW4_Pin|SW5_Pin|SW6_Pin;
+  GPIO_InitStruct.Pin = SW_CHALL1_Pin|SW_CHALL2_Pin|SW_CHALL3_Pin|SW_CHALL4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -92,8 +92,8 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pins : PBPin PBPin PBPin PBPin
                            PBPin PBPin PBPin PBPin
                            PBPin PBPin */
-  GPIO_InitStruct.Pin = CONN_Pin|CONNB11_Pin|CONNB12_Pin|CONNB13_Pin
-                          |CONNB14_Pin|CONNB15_Pin|TP9_Pin|TP10_Pin
+  GPIO_InitStruct.Pin = CONN2_Pin|CONN3_Pin|CONN4_Pin|CONN5_Pin
+                          |CONN6_Pin|CONN7_Pin|TP9_Pin|TP10_Pin
                           |TP11_Pin|TP12_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
