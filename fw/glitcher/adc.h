@@ -5,7 +5,11 @@
 #define ADC_PIO_SM 1u
 #define ADC_CLK (14)
 #define ADC_D0 (15)
+#define ADC_SAMPLES (50000)
 
 void adc_pio_init(void);
+void adc_pio_delay(uint32_t delayns);
+uint16_t* adc_data();
+void adc_pio_start();
 
 #endif

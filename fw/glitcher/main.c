@@ -35,6 +35,7 @@
 
 #include "usb_descriptors.h"
 #include "adc.h"
+#include "output.h"
 #include "hardware/pio.h"
 
 //--------------------------------------------------------------------+
@@ -52,16 +53,39 @@ enum  {
   BLINK_SUSPENDED = 2500,
 };
 
-#define CLK_PIN (14)
-#define D0 (15)
+#define COMMAND_ITF 1
+#define MAX_COMMAND_LENGTH 50
+#define MAX_PARAMETERS 5
+#define MAX_PARAMETER_LENGTH 20
+
+// Enum to represent different SCPI commands
+typedef enum {
+    SCPI_UNKNOWN,
+    SCPI_ADC_DATA,
+    SCPI_ADC_DELAY,
+    SCPI_GPIO_RESET,
+    SCPI_GPIO_ADD,
+    SCPI_TRIGGER_NOW,
+    // Add more SCPI commands here as needed
+    SCPI_COMMAND_COUNT // Always keep this at the end to track the number of commands
+} SCPI_Command;
+
+// Array to store SCPI command strings and their corresponding enums
+const char* scpi_command_strings[] = {
+    "UNKNOWN",
+    ":ADC:DATA?",
+    ":ADC:DELAY",
+    ":GPIO:RESET",
+    ":GPIO:ADD",
+    ":TRIGGER:NOW",
+    ""
+    // Add more SCPI commands here as needed
+};
 
 static uint32_t blink_interval_ms = BLINK_NOT_MOUNTED;
 
 void led_blinking_task(void);
-void hid_task(void);
-
-
-
+void trigger();
 
 /*------------- MAIN -------------*/
 int main(void)
@@ -72,20 +96,132 @@ int main(void)
   adc_pio_init();
   gpio_pio_init();
   uint32_t last = board_millis();
+  tud_cdc_n_set_wanted_char(COMMAND_ITF, '\n');
   while (1)
   {
     tud_task(); // tinyusb device task
     led_blinking_task();
     cdc_sump_task();
-    if (last != board_millis()) {
-      int data = ADC_PIO->rxf[ADC_PIO_SM] >> 22;
-      char buf[16];
-      int len = snprintf(buf, 15, "0x%08x\r\n", data);
-      tud_cdc_n_write_str(1, buf);
-      last = board_millis();
-    }
   }
 }
+
+// Function to parse the SCPI command
+int parse_scpi_command(const char *command) {
+    char command_copy[MAX_COMMAND_LENGTH];
+    char *token;
+    char parameters[MAX_PARAMETERS][MAX_PARAMETER_LENGTH];
+    int parameter_count = 0;
+
+    // Make a copy of the original command as strtok modifies the string
+    strncpy(command_copy, command, MAX_COMMAND_LENGTH);
+
+    // Get the command token (the first part of the command string)
+    token = strtok(command_copy, " ");
+
+    // Map SCPI command string to the corresponding enum
+    SCPI_Command scpi_command_enum = SCPI_UNKNOWN;
+    for (int i = 1; i < SCPI_COMMAND_COUNT; i++) {
+        if (strcmp(token, scpi_command_strings[i]) == 0) {
+            scpi_command_enum = i;
+            break;
+        }
+    }
+
+    token = strtok(NULL, " ");
+    // Process each part of the command and store parameters
+    while (token != NULL) {
+        // If it's not the first token (command), store it as a parameter
+        if (parameter_count < MAX_PARAMETERS - 1) {
+            strncpy(parameters[parameter_count], token, MAX_PARAMETER_LENGTH);
+            parameter_count++;
+        }
+        token = strtok(NULL, ",");
+    }
+
+    // Now you can handle the command and its parameters accordingly using the enums and array
+    // For demonstration purposes, we will just print the parsed command and parameters
+
+    // Print the command as enum value
+    printf("Command: %d\n", scpi_command_enum);
+
+    // Print the parameters
+    printf("Parameters (%d):\n", parameter_count);
+    for (int i = 0; i < parameter_count; i++) {
+        printf("Parameter %d: %s\n", i, parameters[i]);
+    }
+
+    switch (scpi_command_enum) {
+      case SCPI_ADC_DATA: {
+      uint16_t *data = adc_data();
+      if (data == NULL) {
+        tud_cdc_n_write(COMMAND_ITF, "ERR: No Data\n", strlen("ERR: No Data\n"));
+        tud_cdc_n_write_flush(COMMAND_ITF);
+      } else {
+        char buf[64];
+        for (int i = 0; i < ADC_SAMPLES; i++) {
+          snprintf(buf, 63, "%u,", data[i]);
+          tud_cdc_n_write(COMMAND_ITF, buf, strlen(buf));
+          tud_cdc_n_write_flush(COMMAND_ITF);
+          tud_task();
+        }
+        tud_cdc_n_write_char(COMMAND_ITF, '\n');
+        tud_cdc_n_write_flush(COMMAND_ITF);
+        tud_task();
+      }
+      }
+      return 0;
+      case SCPI_ADC_DELAY:
+      if (parameter_count != 1) return -1;
+      adc_pio_delay(strtoul(parameters[0], NULL, 10));
+      return 0;
+      case SCPI_GPIO_ADD:
+      if (parameter_count != 2) return -1;
+      gpio_pio_add(strtoul(parameters[0], NULL, 10), strtoul(parameters[1], NULL, 10));
+      return 0;
+      case SCPI_GPIO_RESET:
+      gpio_pio_reset();
+      return 0;
+      case SCPI_TRIGGER_NOW:
+      trigger();
+      return 0;
+    }
+
+    return -1;
+}
+
+void trigger() {
+  gpio_pio_start();
+  adc_pio_start();
+}
+
+void tud_cdc_rx_wanted_cb(uint8_t itf, char wantedchar) {
+  if (itf != COMMAND_ITF) return;
+  
+  char buffer[128] = {0};
+  char copy[128];
+  //Read until newline character, which has to be in the buffer
+  for (int i = 0; i < MAX_COMMAND_LENGTH; i++) {
+    int res = tud_cdc_n_read_char(itf);
+    if (res == -1 || res == '\n') {
+      break;
+    }
+    if (res >= 'a' && res <= 'z') {
+      res -= ('a'-'A'); //Convert all characters to capitals
+    }
+    buffer[i] = res;
+  }
+  for (int i = 0; i < 128; i++) {
+    copy[i] = buffer[i];
+  }
+  int res = parse_scpi_command(buffer);
+  if (res != 0) {
+    strcat(copy, " ERR\n");
+    tud_cdc_n_write(itf, copy, strlen(copy));
+    tud_cdc_n_write_flush(itf);
+  }
+}
+
+
 
 //--------------------------------------------------------------------+
 // Device callbacks
@@ -116,14 +252,6 @@ void tud_suspend_cb(bool remote_wakeup_en)
 void tud_resume_cb(void)
 {
   blink_interval_ms = BLINK_MOUNTED;
-}
-
-
-// Every 10ms, we will sent 1 report for each HID profile (keyboard, mouse etc ..)
-// tud_hid_report_complete_cb() is used to send the next report after previous one is complete
-void hid_task(void)
-{
-  
 }
 
 //--------------------------------------------------------------------+

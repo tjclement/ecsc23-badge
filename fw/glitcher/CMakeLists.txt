@@ -26,7 +26,7 @@ target_include_directories(hello_world PUBLIC
 ${CMAKE_CURRENT_LIST_DIR})
 
 # Add pico_stdlib library which aggregates commonly used features
-target_link_libraries(hello_world PUBLIC pico_stdlib pico_unique_id tinyusb_device tinyusb_board hardware_pio hardware_dma hardware_pwm)
+target_link_libraries(hello_world PUBLIC pico_multicore pico_stdlib pico_unique_id tinyusb_device tinyusb_board hardware_pio hardware_dma hardware_pwm)
 
 # create map/bin/hex/uf2 file in addition to ELF.
 pico_add_extra_outputs(hello_world)
