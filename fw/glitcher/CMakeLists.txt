@@ -20,6 +20,7 @@ add_executable(hello_world
     cdc_sump.c
     adc.c
     output.c
+    glitch.c
 )
 add_definitions(-DPICO_DEFAULT_LED_PIN=26)
 target_include_directories(hello_world PUBLIC

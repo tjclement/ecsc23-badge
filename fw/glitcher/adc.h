@@ -11,5 +11,6 @@ void adc_pio_init(void);
 void adc_pio_delay(uint32_t delayns);
 uint16_t* adc_data();
 void adc_pio_start();
+void adc_config_clkdiv(uint16_t integer, uint16_t frac);
 
 #endif

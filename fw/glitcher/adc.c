@@ -86,6 +86,10 @@ void adc_pio_start() {
   dma_channel_set_write_addr(DMA_CHANNEL, buf, true);
 }
 
+void adc_config_clkdiv(uint16_t integer, uint16_t frac) {
+  pio_sm_set_clkdiv_int_frac(ADC_PIO, ADC_PIO_SM, integer, frac);
+}
+
 uint16_t* adc_data() {
   if (dma_channel_is_busy(DMA_CHANNEL)) {
     return NULL;

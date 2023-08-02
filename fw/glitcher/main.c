@@ -32,6 +32,7 @@
 #include "tusb_config.h"
 #include "tusb.h"
 #include "cdc_sump.h"
+#include "glitch.h"
 
 #include "usb_descriptors.h"
 #include "adc.h"
@@ -63,9 +64,13 @@ typedef enum {
     SCPI_UNKNOWN,
     SCPI_ADC_DATA,
     SCPI_ADC_DELAY,
+    SCPI_ADC_PLL,
     SCPI_GPIO_RESET,
     SCPI_GPIO_ADD,
     SCPI_TRIGGER_NOW,
+    SCPI_TRIGGER_PIN,
+    SCPI_GLITCH_LEN,
+    SCPI_GLITCH_DELAY,
     // Add more SCPI commands here as needed
     SCPI_COMMAND_COUNT // Always keep this at the end to track the number of commands
 } SCPI_Command;
@@ -75,17 +80,23 @@ const char* scpi_command_strings[] = {
     "UNKNOWN",
     ":ADC:DATA?",
     ":ADC:DELAY",
+    ":ADC:PLL",
     ":GPIO:RESET",
     ":GPIO:ADD",
     ":TRIGGER:NOW",
+    ":TRIGGER:PIN",
+    ":GLITCH:LEN",
+    ":GLITCH:DELAY",
     ""
     // Add more SCPI commands here as needed
 };
 
 static uint32_t blink_interval_ms = BLINK_NOT_MOUNTED;
+static bool irq_fired = true;
 
 void led_blinking_task(void);
 void trigger();
+void configure_trigger(bool fall, int pin);
 
 /*------------- MAIN -------------*/
 int main(void)
@@ -95,6 +106,7 @@ int main(void)
   cdc_sump_init();
   adc_pio_init();
   gpio_pio_init();
+  glitch_init();
   uint32_t last = board_millis();
   tud_cdc_n_set_wanted_char(COMMAND_ITF, '\n');
   while (1)
@@ -174,6 +186,10 @@ int parse_scpi_command(const char *command) {
       if (parameter_count != 1) return -1;
       adc_pio_delay(strtoul(parameters[0], NULL, 10));
       return 0;
+      case SCPI_ADC_PLL:
+      if (parameter_count != 2) return -1;
+      adc_config_clkdiv(strtoul(parameters[0], NULL, 10), strtoul(parameters[1], NULL, 10));
+      return 0;
       case SCPI_GPIO_ADD:
       if (parameter_count != 2) return -1;
       gpio_pio_add(strtoul(parameters[0], NULL, 10), strtoul(parameters[1], NULL, 10));
@@ -184,14 +200,46 @@ int parse_scpi_command(const char *command) {
       case SCPI_TRIGGER_NOW:
       trigger();
       return 0;
+      case SCPI_TRIGGER_PIN:
+      if (parameter_count != 2) return -1;
+      configure_trigger(strtol(parameters[1], NULL, 10), strtoul(parameters[0], NULL, 10));
+      return 0;
+      case SCPI_GLITCH_LEN:
+      if (parameter_count != 1) return -1;
+      glitch_length(strtoul(parameters[0], NULL, 10));
+      return 0;
+      case SCPI_GLITCH_DELAY:
+      if (parameter_count != 1) return -1;
+      glitch_offset(strtoul(parameters[0], NULL, 10));
+      return 0;
     }
 
     return -1;
 }
 
+void gpio_callback(uint gpio, uint32_t events) {
+    // Put the GPIO event(s) that just happened into event_str
+    // so we can print it
+    gpio_set_irq_enabled(gpio, 0, false); //Disable interrupt
+    if (irq_fired) return;
+    trigger();
+    irq_fired = true;
+}
+
+void configure_trigger(bool fall, int pin) {
+  if (pin >= 8) return;
+  uint32_t level = fall ? GPIO_IRQ_EDGE_FALL : GPIO_IRQ_EDGE_RISE;
+  for (int i = 0; i < 8; i++) {
+    gpio_set_irq_enabled(i, 0, false); //Disable all interrupts
+  }
+  irq_fired = false;
+  gpio_set_irq_enabled_with_callback(pin, level, true, gpio_callback);
+}
+
 void trigger() {
   gpio_pio_start();
   adc_pio_start();
+  glitch_trigger();
 }
 
 void tud_cdc_rx_wanted_cb(uint8_t itf, char wantedchar) {

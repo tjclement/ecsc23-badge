@@ -95,6 +95,7 @@ void gpio_pio_start() {
         pio_sm_set_enabled(GPIO_PIO, i, false); //Disable SM
         pio_sm_clear_fifos(GPIO_PIO, i); //Flush FIFO's incase data is still present
         read[i] = 0; //Reset read index
+        pio_sm_exec(GPIO_PIO, i, pio_encode_jmp(gpio_pio_prog_offset));
     }
     for (int i = 0; i < 4; i++) {
         pio_sm_set_enabled(GPIO_PIO, i, true); //Activate SM
