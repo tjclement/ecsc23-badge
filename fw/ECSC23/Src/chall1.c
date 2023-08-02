@@ -1,23 +1,18 @@
 #include <stdbool.h>
 #include "chall1.h"
 #include "print.h"
-#include "debug.h"
+#include "security.h"
+#include "gpio.h"
 
 // For loop glitch
 void chall1() {
-  if (STM_IS_DEBUGGER_ATTACHED) {
-    uart_printf("Busted: STM\r\n");
-    NVIC_SystemReset();
-  }
-  if (CORTEX_IS_DEBUGGER_ATTACHED) {
-    uart_printf("Busted: Cortex\r\n");
-    NVIC_SystemReset();
-  }
+  crash_on_debugger();
 
-  volatile bool check = false;
-  for (volatile int i = 0; i < 100000; i++) {
-    if (check) {
+  volatile bool check = true;
+  for (volatile int i = 0; i < 1000000000; i++) {
+    if (!check) {
       uart_printf("Gotcha\r\n");
+      HAL_GPIO_WritePin(GPIOA, LED_SUCCESS_Pin, GPIO_PIN_SET);
       return;
     }
   }

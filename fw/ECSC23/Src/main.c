@@ -24,6 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "security.h"
 #include "print.h"
 #include "chall1.h"
 #include "chall2.h"
@@ -69,7 +70,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  disable_swd();
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -78,7 +79,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  disable_swd();
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -93,22 +94,32 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+//  protect_flash_readout();
+  uart_printf("Build timestaBij mp - %s@%s\r\n", __DATE__, __TIME__);
+
   uint32_t buttons = GPIOB->IDR;
   if (buttons & GPIO_PIN_0) {
+    HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
     uart_printf("Starting challenge 1\r\n");
     chall1();
   } else if (buttons & GPIO_PIN_1) {
+    HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
     uart_printf("Starting challenge 2\r\n");
     chall2();
   } else if (buttons & GPIO_PIN_2) {
+    HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
     uart_printf("Starting challenge 3\r\n");
     chall3();
   } else if (buttons & GPIO_PIN_3) {
+    HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
     uart_printf("Starting challenge 4\r\n");
     chall4();
   } else {
     uart_printf("Press one of the 4 challenge buttons to start them\r\n");
-    HAL_Delay(1000);
+    HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
+    HAL_Delay(500);
+    HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_RESET);
+    HAL_Delay(500);
     NVIC_SystemReset();
   }
   /* USER CODE END 2 */
@@ -120,10 +131,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
-    HAL_Delay(500);
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
-    HAL_Delay(500);
+    HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_RESET);
   }
   /* USER CODE END 3 */
 }
