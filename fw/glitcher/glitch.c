@@ -52,6 +52,7 @@ void glitch_length(uint32_t length) {
 }
 
 void glitch_trigger() {
+    if (glitch_len == 0) return; //If lenght of glitch is zero dont perform glitch at all
     pio_sm_set_enabled(GLITCH_PIO, GLITCH_SM, false);
     pio_sm_clear_fifos(GLITCH_PIO, GLITCH_SM);
     pio_sm_put(GLITCH_PIO, GLITCH_SM, glitch_off);
