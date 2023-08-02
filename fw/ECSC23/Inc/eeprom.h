@@ -1,0 +1,4 @@
+#ifndef ECSC23_EEPROM_H
+#define ECSC23_EEPROM_H
+
+#endif //ECSC23_EEPROM_H
