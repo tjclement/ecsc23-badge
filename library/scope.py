@@ -17,7 +17,7 @@ class ADCSettings():
         return self._clk_freq
     
     @clk_freq.setter
-    def _set_clk_freq(self, freq:int):
+    def clk_freq(self, freq:int):
         """
         Set ADC CLK Frequency, valid between 0.5kHz and 31.25MHz
         """
@@ -40,7 +40,7 @@ class ADCSettings():
         return self._delay
     
     @delay.setter
-    def _set_delay(self, delay):
+    def delay(self, delay):
         """
         Set delay between trigger and start of sampling in cycles (10ns)
         """
