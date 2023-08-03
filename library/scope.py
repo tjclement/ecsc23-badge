@@ -17,7 +17,7 @@ class ADCSettings():
         return self._clk_freq
     
     @clk_freq.setter
-    def clk_freq(self, freq:int):
+    def clk_freq(self, freq:int) -> None:
         """
         Set ADC CLK Frequency, valid between 0.5kHz and 31.25MHz
         """
@@ -40,7 +40,7 @@ class ADCSettings():
         return self._delay
     
     @delay.setter
-    def delay(self, delay):
+    def delay(self, delay) -> None:
         """
         Set delay between trigger and start of sampling in cycles (10ns)
         """
@@ -48,7 +48,7 @@ class ADCSettings():
         self._dev.write(f":ADC:DELAY {int(delay)}\n".encode("ascii"))
 
 class GlitchSettings():
-    def __init__(self, dev:serial):
+    def __init__(self, dev:serial) -> None:
         self._dev = dev
         self._offset = 10
         self._repeat = 10
@@ -61,7 +61,7 @@ class GlitchSettings():
         return self._offset
     
     @ext_offset.setter
-    def ext_offset(self, offset:int):
+    def ext_offset(self, offset:int) -> None:
         """
         Set delay between trigger and start of glitch in cycles (10ns)
         """
@@ -74,7 +74,7 @@ class GlitchSettings():
         return self._repeat
 
     @repeat.setter
-    def repeat(self, width:int):
+    def repeat(self, width:int) -> None:
         """
         Set width of glitch in cycles (10ns)
         """
@@ -207,7 +207,7 @@ class Scope():
 
         self._dev.write(f":TRIGGER:PIN {pin},{edge}\n".encode("ascii"))
 
-    def trigger(self):
+    def trigger(self) -> None:
         """
         Immediately trigger the glitch/gpio/adc
 
