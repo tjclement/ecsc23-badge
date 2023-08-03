@@ -78,10 +78,13 @@ class Scope():
     def __init__(self, port=None) -> None:
         if port is None:
             ports = comports()
-            matches = [p.device for p in ports if p.product == "Sparkle"]
+            matches = [p.device for p in ports if p.interface == "Sparkle API"]
+            if len(matches) != 1:
+                matches = [p.device for p in ports if p.product == "Sparkle"]
+                matches.reverse()
             if len(matches) != 2:
                 raise IOError('Sparkle device not found. Please check if it\'s connected, and pass its port explicitly if it is.')
-            port = matches[1]
+            port = matches[0]
 
         self._port = port
         self._dev = serial.Serial(port, 115200, timeout=1.0)
