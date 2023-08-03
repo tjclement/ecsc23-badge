@@ -137,6 +137,7 @@ class GPIOSettings():
         -------
         None
         """
+        self.dev.write(b":GPIO:RESET\n")
         for i in range(0, 4):
             self.gpio[i].clear()
 
@@ -229,6 +230,7 @@ class Scope():
         self.glitch.ext_offset = 0
         self.adc.delay = 0
         self.adc.clk_freq = 10000000
+        self.gpio.reset()
 
     def con(self) -> None:
         """
