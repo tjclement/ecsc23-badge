@@ -183,7 +183,7 @@ class Scope():
         print(f"Connected to version: {data.decode('ascii')}")
         self.adc = ADCSettings(self._dev)
         self.glitch = GlitchSettings(self._dev)
-        self.gpio = GPIOSettings(self._dev)
+        self.io = GPIOSettings(self._dev)
 
     def arm(self, pin:int=0, edge:int=RISING_EDGE) -> None:
         """
@@ -230,7 +230,7 @@ class Scope():
         self.glitch.ext_offset = 0
         self.adc.delay = 0
         self.adc.clk_freq = 10000000
-        self.gpio.reset()
+        self.io.reset()
 
     def con(self) -> None:
         """
