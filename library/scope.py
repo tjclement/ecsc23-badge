@@ -1,4 +1,5 @@
 import serial
+from serial.tools.list_ports import comports
 import logging
 
 
@@ -74,7 +75,14 @@ class Scope():
     RISING_EDGE = 0
     FALLING_EDGE = 1
 
-    def __init__(self, port) -> None:
+    def __init__(self, port=None) -> None:
+        if port is None:
+            ports = comports()
+            matches = [p.device for p in ports if p.product == "Sparkle"]
+            if len(matches) != 2:
+                raise IOError('Sparkle device not found. Please check if it\'s connected, and pass its port explicitly if it is.')
+            port = matches[1]
+
         self._port = port
         self._dev = serial.Serial(port, 115200, timeout=1.0)
         self.adc = ADCSettings(self._dev)

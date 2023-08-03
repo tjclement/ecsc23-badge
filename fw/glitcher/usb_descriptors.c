@@ -23,6 +23,8 @@
  *
  */
 
+#include <stdint.h>
+#include <sys/types.h>
 #include "pico/unique_id.h"
 #include "tusb_config.h"
 #include "tusb.h"
@@ -98,8 +100,8 @@ uint8_t const desc_configuration[] =
   // Config number, interface count, string index, total length, attribute, power in mA
   TUD_CONFIG_DESCRIPTOR(1, ITF_NUM_TOTAL, 0, CONFIG_TOTAL_LEN, TUSB_DESC_CONFIG_ATT_REMOTE_WAKEUP, 100),
 
-  TUD_CDC_DESCRIPTOR(ITF_NUM_CDC1, 0, EPNUM_CDC_NOTIF1, 8, EPNUM_CDC1, EPNUM_CDC1 | 0x80, 64),
-  TUD_CDC_DESCRIPTOR(ITF_NUM_CDC2, 0, EPNUM_CDC_NOTIF2, 8, EPNUM_CDC2, EPNUM_CDC2 | 0x80, 64),
+  TUD_CDC_DESCRIPTOR(ITF_NUM_CDC1, 4, EPNUM_CDC_NOTIF1, 8, EPNUM_CDC1, EPNUM_CDC1 | 0x80, 64),
+  TUD_CDC_DESCRIPTOR(ITF_NUM_CDC2, 5, EPNUM_CDC_NOTIF2, 8, EPNUM_CDC2, EPNUM_CDC2 | 0x80, 64),
 };
 
 #if TUD_OPT_HIGH_SPEED
@@ -172,9 +174,11 @@ char serial[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1];
 char const* string_desc_arr [] =
 {
   (const char[]) { 0x09, 0x04 }, // 0: is supported language is English (0x0409)
-  "TinyUSB",                     // 1: Manufacturer
-  "TinyUSB Device",              // 2: Product
+  "Curious Supplies",            // 1: Manufacturer
+  "Sparkle",                     // 2: Product
   serial,                        // 3: Serials, uses the flash ID
+  "Sparkle Console",             // 4: CDC interface for UART communication
+  "Sparkle API",                 // 5: CDC interface for controlling Sparkle
 };
 
 static uint16_t _desc_str[32];
