@@ -58,6 +58,7 @@ enum  {
 #define MAX_COMMAND_LENGTH 50
 #define MAX_PARAMETERS 5
 #define MAX_PARAMETER_LENGTH 20
+#define VERSION "0.0.1"
 
 // Enum to represent different SCPI commands
 typedef enum {
@@ -71,6 +72,7 @@ typedef enum {
     SCPI_TRIGGER_PIN,
     SCPI_GLITCH_LEN,
     SCPI_GLITCH_DELAY,
+    SCPI_VERSION,
     // Add more SCPI commands here as needed
     SCPI_COMMAND_COUNT // Always keep this at the end to track the number of commands
 } SCPI_Command;
@@ -87,6 +89,7 @@ const char* scpi_command_strings[] = {
     ":TRIGGER:PIN",
     ":GLITCH:LEN",
     ":GLITCH:DELAY",
+    ":VERSION?",
     ""
     // Add more SCPI commands here as needed
 };
@@ -211,6 +214,11 @@ int parse_scpi_command(const char *command) {
       case SCPI_GLITCH_DELAY:
       if (parameter_count != 1) return -1;
       glitch_offset(strtoul(parameters[0], NULL, 10));
+      return 0;
+      case SCPI_VERSION:
+      tud_cdc_n_write(COMMAND_ITF, VERSION, strlen(VERSION));
+      tud_cdc_n_write_char(COMMAND_ITF, '\n');
+      tud_cdc_n_write_flush(COMMAND_ITF);
       return 0;
     }
 
