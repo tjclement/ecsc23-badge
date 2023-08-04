@@ -56,27 +56,27 @@ class GlitchSettings():
     @property
     def ext_offset(self) -> int:
         """
-        Delay between trigger and start of glitch in cycles (10ns)
+        Delay between trigger and start of glitch in cycles (8ns)
         """
         return self._offset
     
     @ext_offset.setter
     def ext_offset(self, offset:int) -> None:
         """
-        Set delay between trigger and start of glitch in cycles (10ns)
+        Set delay between trigger and start of glitch in cycles (8ns)
         """
         self._dev.write(f":GLITCH:DELAY {int(offset)}\n".encode("ascii"))
         self._offset = offset
     
     @property
     def repeat(self) -> int:
-        """Width of glitch in cycles (approx = 10 ns * width)"""
+        """Width of glitch in cycles (approx = 8 ns * width)"""
         return self._repeat
 
     @repeat.setter
     def repeat(self, width:int) -> None:
         """
-        Set width of glitch in cycles (10ns)
+        Set width of glitch in cycles (8ns)
         """
         self._dev.write(f":GLITCH:LEN {int(width)}\n".encode("ascii"))
         self._repeat = width
@@ -269,7 +269,8 @@ class Scope():
             logging.warning(f"Received: {data}")
             return []
         data = data.split(",")
-        data = data[0:50000]
+        data = [x for x in data if x != '']
+        print(data)
         if as_int:
             return [int(x) for x in data]
         return [float(x)/1024-0.5 for x in data]

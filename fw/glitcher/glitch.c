@@ -36,7 +36,6 @@ void glitch_init() {
 
     c = pio_get_default_sm_config();
     sm_config_set_set_pins(&c, GLITCH_PIN, 1);
-    sm_config_set_clkdiv_int_frac(&c, 1, 64); //100MHz
     pio_sm_set_consecutive_pindirs(GLITCH_PIO, GLITCH_SM, GLITCH_PIN, 1, true);
 
     pio_sm_init(GLITCH_PIO, GLITCH_SM, glitch_pio_off, &c);
