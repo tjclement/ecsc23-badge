@@ -200,7 +200,7 @@ class Scope():
         -------
         None
         """
-        if pin < 0 or pin >= 7:
+        if pin < 0 or pin > 7:
             raise ValueError("Pin invalid")
         
         if edge != self.RISING_EDGE and edge != self.FALLING_EDGE:
