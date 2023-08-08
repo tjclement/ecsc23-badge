@@ -95,7 +95,7 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 //  protect_flash_readout();
-  uart_printf("Build timestaBij mp - %s@%s\r\n", __DATE__, __TIME__);
+  uart_printf("Build timestamp - %s@%s\r\n", __DATE__, __TIME__);
 
   uint32_t buttons = GPIOB->IDR;
   if (buttons & GPIO_PIN_0) {
@@ -182,7 +182,7 @@ void SystemClock_Config(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
+  /* User can add their own implementation to report the HAL error return state */
   __disable_irq();
   while (1)
   {

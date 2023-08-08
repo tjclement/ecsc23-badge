@@ -46,6 +46,8 @@ Src/chall2.c \
 Src/chall3.c \
 Src/chall4.c \
 Src/eeprom.c \
+Src/crc32.c \
+Src/aes.c \
 Src/security.c \
 Src/stm32f1xx_it.c \
 Src/stm32f1xx_hal_msp.c \
