@@ -105,8 +105,9 @@ int main(void)
   uart_printf("HW UID: 0x%08X 0x%08X 0x%08X\r\n", uid0, uid1, uid2);
 
 //  eeprom_restore();
-//  eeprom_dump(0x50);
-//  eeprom_dump(0x51);
+  eeprom_dump(0x50);
+  eeprom_dump(0x51);
+//  eeprom_test_write(0x50);
 
   uint32_t buttons = GPIOB->IDR;
   if (buttons & GPIO_PIN_0) {
