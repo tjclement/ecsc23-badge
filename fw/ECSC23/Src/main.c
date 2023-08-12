@@ -96,20 +96,18 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 //  protect_flash_readout();
-  uart_printf("Build timestamp - %s@%s\r\n", __DATE__, __TIME__);
+  uart_printf("DEBUG - Build timestamp - %s@%s\r\n", __DATE__, __TIME__);
 
   uint32_t uid0 = HAL_GetUIDw0();
   uint32_t uid1 = HAL_GetUIDw1();
   uint32_t uid2 = HAL_GetUIDw2();
 
-  uart_printf("HW UID: 0x%08X 0x%08X 0x%08X\r\n", uid0, uid1, uid2);
+  uart_printf("DEBUG - HW UID: 0x%08X 0x%08X 0x%08X\r\n", uid0, uid1, uid2);
 
-//  eeprom_restore();
-  eeprom_dump(0x50);
-  eeprom_dump(0x51);
-//  eeprom_test_write(0x50);
+  uint32_t buttons;
 
-  uint32_t buttons = GPIOB->IDR;
+  check:
+  buttons = (volatile uint32_t) GPIOB->IDR;
   if (buttons & GPIO_PIN_0) {
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
     uart_printf("Starting challenge 1\r\n");
@@ -132,7 +130,7 @@ int main(void)
     HAL_Delay(500);
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_RESET);
     HAL_Delay(500);
-    NVIC_SystemReset();
+    goto check;
   }
   /* USER CODE END 2 */
 

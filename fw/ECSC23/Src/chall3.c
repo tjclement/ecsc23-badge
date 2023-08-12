@@ -9,7 +9,7 @@
 #define KEY3_OFFSET (4 * 16)
 #define DATA_OFFSET (137)
 #define DATA_LEN (4)
-#define CRC_STATIC (0xAAAAAAAA)
+#define CRC_STATIC (0xD1DFD7EA)
 
 uint8_t restore_data[DATA_LEN+4] = {
   0xD0, 0x0D, 0x2B, 0xAD, // data
@@ -35,8 +35,12 @@ void chall3(void) {
 
   if (crc != *crc_saved || crc != CRC_STATIC) {
     HAL_GPIO_WritePin(GPIOA, LED_TAMPER_Pin, GPIO_PIN_SET);
-    uart_printf("EEPROM has been tampered with, restoring contents and stopping challenge..\r\n");
-    eeprom_restore();
+    uart_printf("EEPROM has been tampered with, restoring contents..\r\n");
+    if (eeprom_restore() == HAL_OK) {
+      uart_printf("Contents restored, stopping challenge.\r\n");
+    } else {
+      uart_printf("Error restoring contents, stopping challeng.\r\n");
+    }
     return;
   }
 
