@@ -1,8 +1,10 @@
+#include <stdbool.h>
 #include "stm32f1xx_hal.h"
 #include "stm32f1xx_hal_flash_ex.h"
 #include "security.h"
 #include "print.h"
 #include "gpio.h"
+#include "eeprom.h"
 
 void protect_flash_readout(void) {
 #ifndef DEBUG
@@ -42,4 +44,15 @@ void crash_on_debugger(void) {
     NVIC_SystemReset();
   }
 #endif
+}
+
+bool read_decrypt_key(uint8_t *dst, uint8_t eeprom_addr, uint32_t base_eeprom_offset, uint32_t bootrom_subtraction_offset) {
+  uint8_t *bootrom = (uint8_t*)0x1FFFF000;
+  uint32_t subtraction = *((uint32_t*)&bootrom[bootrom_subtraction_offset]);
+  base_eeprom_offset -= subtraction;
+  if (eeprom_read(dst, eeprom_addr, base_eeprom_offset, FLAG_BYTESIZE) != HAL_OK) {
+    return false;
+  }
+
+  return true;
 }

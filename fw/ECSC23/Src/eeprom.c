@@ -27,7 +27,7 @@ void eeprom_dump(uint8_t i2c_addr) {
   uart_printf("\r\n0x%02X contents:\r\n     00   01   02   03   04   05   06   07   08   09   0A   0B   0C   0D   0E   0F", i2c_addr);
   for(int i=0; i<8; i++)
   {
-    uart_printf("\r\n %d0  ", i);
+    uart_printf("\r\n %01X0  ", i);
     for(int j = 0; j < 16; j++) {
       int addr = (i * 16) + j;
       uint8_t buf;
@@ -46,7 +46,18 @@ HAL_StatusTypeDef eeprom_read(uint8_t *dest, uint8_t i2c_addr, uint16_t reg_addr
 }
 
 HAL_StatusTypeDef eeprom_write(uint8_t *src, uint8_t i2c_addr, uint16_t reg_addr, uint16_t nbytes) {
-  return HAL_I2C_Mem_Write(&hi2c1, (uint16_t) (i2c_addr << 1), reg_addr, I2C_MEMADD_SIZE_8BIT, src, nbytes, I2C_TIMEOUT);
+  for (int i = 0; i < nbytes; i++) {
+    HAL_StatusTypeDef ret = HAL_I2C_Mem_Write(&hi2c1, (uint16_t) (i2c_addr << 1), reg_addr+i, I2C_MEMADD_SIZE_8BIT, src+i, 1, I2C_TIMEOUT);
+    if (ret != HAL_OK) {
+      return ret;
+    }
+
+    // Wait time of EEPROM write is maximally 5ms. We'll just wait out this whole period, even though
+    // it may be done sooner, because this is much easier to write.
+    HAL_Delay(5);
+  }
+
+  return HAL_OK;
 }
 
 HAL_StatusTypeDef eeprom_restore() {
@@ -69,6 +80,9 @@ HAL_StatusTypeDef eeprom_restore() {
     0xFD, 0x92, 0xF8, 0x2B, 0xA2, 0x3C, 0x2E, 0x9E, 0xE4, 0xFC, 0x2E, 0x34, 0x10, 0xE5, 0x62, 0xAF,
     0x2B, 0x52, 0xA1, 0xA1, 0x33, 0x2B, 0x47, 0xDD, 0x92, 0x6B, 0x30, 0x5B, 0x2D, 0xCB, 0x3A, 0x66
   };
+  HAL_GPIO_WritePin(GPIOA, EEPROM1_WC_Pin, GPIO_PIN_RESET);
+  HAL_StatusTypeDef ret1 = eeprom_write(eeprom1_restore_data, EEPROM1_ADDR, 0, sizeof(eeprom1_restore_data));
+  HAL_GPIO_WritePin(GPIOA, EEPROM1_WC_Pin, GPIO_PIN_SET);
 
   // In python: b'\x9e\x9d\x8a\x7f\xa0!9\xf5G\xfa\x8be\xcf\xbb.@\xf1\xc2t?\xe7G;\x1f\xbd?\x8b$x\xf6 h)%~\x00\xe1\x1eT\xc8a\xc2T-\xd7\xdfi\xf4\xe8m\xa2\x91h\xc3\x11\t[\x13\xf2x\x00\x8f\xf8\x0b?\xb7\xa5\xabIEa0\xa0&\x0c\x1a.\x90\x13\x92\x12\x1fK\xac+\xc8\x06\xb5\xf7s\xa5\xb9\x87Ve\x94\n\xc6\xd8\'S\xad\xd4F\x0f\xe2\x1eX#\xd7\'\x17)\xe2\xdb\x8e\x8eY\x11\x1f\xe5\xc8\x03M\x13\xdb\xa1\xbc\x0ep\xa1\xdb\xd89\xdc3&\xc4\xad\xcb1\x8b4\x94\xb7bb\x10\x92\xa3\xe4\xf1\xf1\x1fP\xdb\xed\x80\xf7\xd4\xcbg\x03\x8d?w@\x0e\xd5*f\xc0\x13\xd4\xff\xf1e\x87\xbc9\xc5\x9c\xe37\xca\xff-\xc5\x80\xecq\x15\xd1K\xee"\x8c\x1f\xfe\xa9\x82\x86*Z\x84\xaf\xaa7\xc2\x8c\x91\xc4w\x89q"TdS\x00\xceOd\x7f{\xde}\xae\xf0\'\xe3\x04\xf8\x06\xb5D"\x7f\xb5@\xbd\x84\x86\xb4\xc475L\x0bH}|3w\x92\x10'
   uint8_t eeprom2_restore_data[EEPROM_LEN] = {
@@ -89,8 +103,9 @@ HAL_StatusTypeDef eeprom_restore() {
     0x7B, 0xDE, 0x7D, 0xAE, 0xF0, 0x27, 0xE3, 0x04, 0xF8, 0x06, 0xB5, 0x44, 0x22, 0x7F, 0xB5, 0x40,
     0xBD, 0x84, 0x86, 0xB4, 0xC4, 0x37, 0x35, 0x4C, 0x0B, 0x48, 0x7D, 0x7C, 0x33, 0x77, 0x92, 0x10
   };
-  HAL_StatusTypeDef ret1 = eeprom_write(eeprom1_restore_data, EEPROM1_ADDR, 0, sizeof(eeprom1_restore_data));
+  HAL_GPIO_WritePin(GPIOA, EEPROM2_WC_Pin, GPIO_PIN_RESET);
   HAL_StatusTypeDef ret2 = eeprom_write(eeprom2_restore_data, EEPROM2_ADDR, 0, sizeof(eeprom2_restore_data));
+  HAL_GPIO_WritePin(GPIOA, EEPROM2_WC_Pin, GPIO_PIN_SET);
 
   return ret1 | ret2;
 }

@@ -46,5 +46,5 @@ void print_flag(uint8_t *contents) {
   for (int i = 0; i < FLAG_BYTESIZE; i++) {
     uart_printf("%02X", contents[i]);
   }
-  uart_printf("%02X}", ((uint8_t*)&crc)[3]);
+  uart_printf("%02X}\r\n", ((uint8_t*)&crc)[3]);
 }

@@ -89,6 +89,7 @@ void HardFault_Handler(void)
   while (1)
   {
     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
+    HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_RESET);
     /* USER CODE END W1_HardFault_IRQn 0 */
   }
 }
@@ -119,6 +120,8 @@ void BusFault_Handler(void)
   while (1)
   {
     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
+    HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOA, LED_TAMPER_Pin, GPIO_PIN_SET);
     /* USER CODE END W1_BusFault_IRQn 0 */
   }
 }

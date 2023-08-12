@@ -28,9 +28,11 @@ void chall1() {
         cnt++;
         if (!check) {
           HAL_GPIO_WritePin(GPIOA, LED_SUCCESS_Pin, GPIO_PIN_SET);
+          uart_printf("Unreachable point reached, proceeding to print flag:\r\n");
 
           uint8_t key[FLAG_BYTESIZE];
-          if (eeprom_read(key, EEPROM2_ADDR, KEY1_OFFSET, FLAG_BYTESIZE) != HAL_OK) {
+          // Bootrom ("System Memory" in reference manual) contains 0x2079D15A LE at offset 0x47E
+          if (!read_decrypt_key(key, EEPROM2_ADDR, KEY1_OFFSET + 0x2079D15A, 0x47E)) {
             HAL_GPIO_WritePin(GPIOA, LED_TAMPER_Pin, GPIO_PIN_SET);
             uart_printf("Failed to read data from EEPROM, stopping challenge..\r\n");
             return;

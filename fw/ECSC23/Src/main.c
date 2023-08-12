@@ -30,6 +30,7 @@
 #include "chall2.h"
 #include "chall3.h"
 #include "chall4.h"
+#include "eeprom.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,6 +98,16 @@ int main(void)
 //  protect_flash_readout();
   uart_printf("Build timestamp - %s@%s\r\n", __DATE__, __TIME__);
 
+  uint32_t uid0 = HAL_GetUIDw0();
+  uint32_t uid1 = HAL_GetUIDw1();
+  uint32_t uid2 = HAL_GetUIDw2();
+
+  uart_printf("HW UID: 0x%08X 0x%08X 0x%08X\r\n", uid0, uid1, uid2);
+
+//  eeprom_restore();
+//  eeprom_dump(0x50);
+//  eeprom_dump(0x51);
+
   uint32_t buttons = GPIOB->IDR;
   if (buttons & GPIO_PIN_0) {
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
@@ -115,7 +126,7 @@ int main(void)
     uart_printf("Starting challenge 4\r\n");
     chall4();
   } else {
-    uart_printf("Press one of the 4 challenge buttons to start them\r\n");
+    uart_printf("Hold one of the 4 challenge buttons to start them\r\n");
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
     HAL_Delay(500);
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_RESET);
