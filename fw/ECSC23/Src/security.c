@@ -46,6 +46,16 @@ void crash_on_debugger(void) {
 #endif
 }
 
+void crash_on_fpb(void) {
+  uint32_t FP_CTRL = *(volatile uint32_t*)0xe0002000;
+  if (FP_CTRL != 0x260) {
+    // Flash Patch Breakpoint peripheral is enabled, allowing forced execution of flash code from SRAM
+    HAL_GPIO_WritePin(GPIOA, LED_TAMPER_Pin, GPIO_PIN_SET);
+    HAL_Delay(500);
+    NVIC_SystemReset();
+  }
+}
+
 bool read_decrypt_key(uint8_t *dst, uint8_t eeprom_addr, uint32_t base_eeprom_offset, uint32_t bootrom_subtraction_offset) {
   uint8_t *bootrom = (uint8_t*)0x1FFFF000;
   uint32_t subtraction = *((uint32_t*)&bootrom[bootrom_subtraction_offset]);

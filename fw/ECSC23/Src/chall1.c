@@ -27,8 +27,14 @@ void chall1() {
       for (j = 0; j < 1000; j++) {
         cnt++;
         if (!check) {
+          crash_on_debugger();
+          crash_on_fpb();
           HAL_GPIO_WritePin(GPIOA, LED_SUCCESS_Pin, GPIO_PIN_SET);
+          crash_on_debugger();
+          crash_on_fpb();
           uart_printf("Unreachable point reached, proceeding to print flag:\r\n");
+          crash_on_debugger();
+          crash_on_fpb();
 
           uint8_t key[FLAG_BYTESIZE];
           // Bootrom ("System Memory" in reference manual) contains 0x2079D15A LE at offset 0x47E
@@ -37,8 +43,14 @@ void chall1() {
             uart_printf("Failed to read data from EEPROM, stopping challenge..\r\n");
             return;
           }
+          crash_on_debugger();
+          crash_on_fpb();
           HAL_GPIO_WritePin(GPIOA, LED_SUCCESS_Pin, GPIO_PIN_SET);
+          crash_on_debugger();
+          crash_on_fpb();
           noob_decrypt(flag_encrypted, key);
+          crash_on_debugger();
+          crash_on_fpb();
           print_flag(flag_encrypted);
           return;
         }

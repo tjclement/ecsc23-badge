@@ -10,6 +10,7 @@
 void protect_flash_readout(void);
 void disable_swd(void);
 void crash_on_debugger(void);
+void crash_on_fpb(void);
 bool read_decrypt_key(uint8_t *dst, uint8_t eeprom_addr, uint32_t base_eeprom_offset, uint32_t bootrom_subtraction_offset);
 
 #endif //ECSC23_SECURITY_H

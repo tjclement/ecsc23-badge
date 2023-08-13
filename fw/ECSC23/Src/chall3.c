@@ -24,15 +24,21 @@ void chall3(void) {
   };
   uart_printf("Checking EEPROM integrity\r\n");
 
+  crash_on_debugger();
+  crash_on_fpb();
   if (eeprom_read(buf, EEPROM1_ADDR, DATA_OFFSET, DATA_LEN+4) != HAL_OK) {
     HAL_GPIO_WritePin(GPIOA, LED_TAMPER_Pin, GPIO_PIN_SET);
     uart_printf("Failed to read EEPROM, stopping challenge..\r\n");
     return;
   }
 
+  crash_on_debugger();
+  crash_on_fpb();
   uint32_t crc = crc32buf((char*)buf, DATA_LEN);
   uint32_t* crc_saved = (uint32_t*) &buf[DATA_LEN];
 
+  crash_on_debugger();
+  crash_on_fpb();
   if (crc != *crc_saved || crc != CRC_STATIC) {
     HAL_GPIO_WritePin(GPIOA, LED_TAMPER_Pin, GPIO_PIN_SET);
     uart_printf("EEPROM has been tampered with, restoring contents..\r\n");
@@ -44,8 +50,12 @@ void chall3(void) {
     return;
   }
 
+  crash_on_debugger();
+  crash_on_fpb();
   uart_printf("Checking access protection\r\n");
 
+  crash_on_debugger();
+  crash_on_fpb();
   if (eeprom_read(buf, EEPROM1_ADDR, DATA_OFFSET, DATA_LEN) != HAL_OK) {
     HAL_GPIO_WritePin(GPIOA, LED_TAMPER_Pin, GPIO_PIN_SET);
     uart_printf("Failed to read EEPROM, stopping challenge..\r\n");
@@ -53,13 +63,16 @@ void chall3(void) {
   }
 
   if (buf[1] != 0x00) {
-    HAL_GPIO_WritePin(GPIOA, LED_TAMPER_Pin, GPIO_PIN_SET);
     uart_printf("Protection bits set (0x%02X), refusing to continue. Stopping challenge..\r\n", buf[1]);
     return;
   }
 
+  crash_on_debugger();
+  crash_on_fpb();
   uart_printf("Protection bits are clear, proceeding to print flag:\r\n");
 
+  crash_on_debugger();
+  crash_on_fpb();
   uint8_t key[FLAG_BYTESIZE];
   // Bootrom ("System Memory" in reference manual) contains 0x4149F760 LE at offset 0x5B
   if (!read_decrypt_key(key, EEPROM2_ADDR, KEY3_OFFSET + 0x4149F760, 0x5B)) {
@@ -67,7 +80,13 @@ void chall3(void) {
     uart_printf("Failed to read data from EEPROM, stopping challenge..\r\n");
     return;
   }
+  crash_on_debugger();
+  crash_on_fpb();
   HAL_GPIO_WritePin(GPIOA, LED_SUCCESS_Pin, GPIO_PIN_SET);
+  crash_on_debugger();
+  crash_on_fpb();
   noob_decrypt(flag_encrypted, key);
+  crash_on_debugger();
+  crash_on_fpb();
   print_flag(flag_encrypted);
 }
