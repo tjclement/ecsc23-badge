@@ -11,7 +11,7 @@
 #define DMA_CHANNEL (8)
 
 static int adc_pio_prog_offset;
-static uint32_t delay;
+static uint32_t delay = 10;
 static uint16_t buf[ADC_SAMPLES];
 
 static void init_gpio_adc() {
@@ -82,6 +82,7 @@ void adc_pio_start() {
   dma_channel_abort(DMA_CHANNEL);
   pio_sm_clear_fifos(ADC_PIO, ADC_PIO_SM);
   pio_sm_put(ADC_PIO, ADC_PIO_SM, delay);
+  pio_sm_exec(ADC_PIO, ADC_PIO_SM, pio_encode_jmp(adc_pio_prog_offset));
   pio_sm_set_enabled(ADC_PIO, ADC_PIO_SM, true);
   dma_channel_set_write_addr(DMA_CHANNEL, buf, true);
 }
