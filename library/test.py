@@ -1,18 +1,18 @@
-from gpio import GPIOController
+import matplotlib.pyplot as plt
 from scope import Scope
-import serial
+from time import sleep
 
 scope = Scope()
-controller = GPIOController(scope._dev)
-for i in range(0, 4):
-    controller.adds(i, 1, (i+1)*0.05)
-    controller.adds(i, 0, (i+1)*0.05)
-    controller.adds(i, 1, (i+1)*0.05)
-    controller.adds(i, 0, (i+1)*0.05)
-    controller.adds(i, 1, (i+1)*0.05)
-    controller.adds(i, 0, (i+1)*0.05)
+controller = scope.io
+for i in range(0, 250, 2):
+    controller.add(0, 1, seconds=0.001*i)
+    controller.add(0, 0, seconds=0.001*i+0.001)
 controller.upload()
 
 scope.glitch.repeat = 38
 while True:
     scope.trigger()
+    sleep(1)
+    data = scope.get_last_trace()
+    #plt.plot(data)
+    #plt.show()
