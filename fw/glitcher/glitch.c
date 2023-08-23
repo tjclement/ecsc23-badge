@@ -3,7 +3,7 @@
 
 #define GLITCH_PIO pio1
 #define GLITCH_SM (2)
-#define GLITCH_PIN (12)
+#define GLITCH_PIN (17)
 
 static uint32_t glitch_len = 0;
 static uint32_t glitch_off = 0;

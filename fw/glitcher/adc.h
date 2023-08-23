@@ -3,8 +3,8 @@
 
 #define ADC_PIO pio1
 #define ADC_PIO_SM 1u
-#define ADC_CLK (14)
-#define ADC_D0 (15)
+#define ADC_CLK (18)
+#define ADC_D0 (19)
 #define ADC_SAMPLES (50000)
 
 void adc_pio_init(void);

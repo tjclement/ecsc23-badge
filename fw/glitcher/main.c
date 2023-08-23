@@ -60,9 +60,9 @@ enum  {
 #define MAX_PARAMETER_LENGTH 20
 #define VERSION "0.0.1"
 
-#define LED1 (27)
-#define LED2 (28)
-#define LED3 (29)
+#define LED1 (12)
+#define LED2 (13)
+#define LED3 (14)
 
 // Enum to represent different SCPI commands
 typedef enum {

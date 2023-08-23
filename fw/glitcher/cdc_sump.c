@@ -77,7 +77,7 @@
 
 //#if PICO_NO_FLASH
 //#define SUMP_MEMORY_SIZE	102400	// 100kB
-#define SUMP_MEMORY_SIZE	147456
+#define SUMP_MEMORY_SIZE	102400
 //#else
 //#define SUMP_MEMORY_SIZE	204800	// 200kB
 //#endif
