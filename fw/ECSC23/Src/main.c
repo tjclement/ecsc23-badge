@@ -104,24 +104,24 @@ int main(void)
 
   uart_printf("DEBUG - HW UID: 0x%08X 0x%08X 0x%08X\r\n", uid0, uid1, uid2);
   uart_printf("DEBUG - FPB regs: 0x%08X 0x%08X 0x%08X 0x%08X\r\n", *(uint32_t*)0xe0002000, *(uint32_t*)0xe0002004, *(uint32_t*)0xe0002008, *(uint32_t*)0xe000200c);
-
+  eeprom_dump(0x50);
+  eeprom_dump(0x51);
   uint32_t buttons;
 
   check:
-  buttons = (volatile uint32_t) GPIOB->IDR;
-  if (buttons & GPIO_PIN_0) {
+  if (HAL_GPIO_ReadPin(SW_CHALL1_GPIO_Port, SW_CHALL1_Pin)) {
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
     uart_printf("Starting challenge 1\r\n");
     chall1();
-  } else if (buttons & GPIO_PIN_1) {
+  } else if (HAL_GPIO_ReadPin(SW_CHALL2_GPIO_Port, SW_CHALL2_Pin)) {
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
     uart_printf("Starting challenge 2\r\n");
     chall2();
-  } else if (buttons & GPIO_PIN_2) {
+  } else if (HAL_GPIO_ReadPin(SW_CHALL3_GPIO_Port, SW_CHALL3_Pin)) {
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
     uart_printf("Starting challenge 3\r\n");
     chall3();
-  } else if (buttons & GPIO_PIN_3) {
+  } else if (HAL_GPIO_ReadPin(SW_CHALL4_GPIO_Port, SW_CHALL4_Pin)) {
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
     uart_printf("Starting challenge 4\r\n");
     chall4();
