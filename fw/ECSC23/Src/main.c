@@ -104,8 +104,6 @@ int main(void)
 
   uart_printf("DEBUG - HW UID: 0x%08X 0x%08X 0x%08X\r\n", uid0, uid1, uid2);
   uart_printf("DEBUG - FPB regs: 0x%08X 0x%08X 0x%08X 0x%08X\r\n", *(uint32_t*)0xe0002000, *(uint32_t*)0xe0002004, *(uint32_t*)0xe0002008, *(uint32_t*)0xe000200c);
-  eeprom_dump(0x50);
-  eeprom_dump(0x51);
   uint32_t buttons;
 
   check:
