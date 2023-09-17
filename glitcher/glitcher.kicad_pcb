@@ -9323,7 +9323,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/14702839-7aa5-417d-849f-9d7162873f80")
     (attr smd)
-    (fp_text reference "R1" (at 2.474874 0.070711 135) (layer "B.SilkS")
+    (fp_text reference "R1" (at 2.474874 0.070711 135) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 584150c7-53ca-460a-8356-8f78535c0c49)
     )
@@ -9378,7 +9378,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/e34870be-4444-45ee-96c8-f55765118298")
     (attr smd)
-    (fp_text reference "R3" (at -2.4 -0.1 90) (layer "B.SilkS")
+    (fp_text reference "R3" (at -2.4 -0.1 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 49c7d11e-2dcb-4bca-86fc-1786b4cee49e)
     )
@@ -9433,7 +9433,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/72cf8d26-aedb-4e94-9396-6156d94c7564")
     (attr smd)
-    (fp_text reference "C8" (at 2.2 -0.2 270) (layer "B.SilkS")
+    (fp_text reference "C8" (at 2.2 -0.2 270) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp b11700dc-813b-45a4-badf-fcaf5692bec7)
     )
@@ -9492,7 +9492,7 @@
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 2bcb5155-6e49-4c50-8f00-2133b71ca56b)
     )
-    (fp_text value "LED" (at 0 -1.65 90) (layer "B.Fab")
+    (fp_text value "LED YELLOW" (at 0 -1.65 90) (layer "B.Fab")
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp dbaf5f03-f481-4935-adf6-0b460d28c638)
     )
@@ -9546,7 +9546,7 @@
     (property "ki_keywords" "test point tp")
     (path "/2d40b7fa-c0d7-4419-93c3-13eacd261ad1")
     (attr exclude_from_pos_files)
-    (fp_text reference "TP2" (at -2.9 0.1) (layer "B.SilkS")
+    (fp_text reference "TP2" (at -2.9 0.1) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 1f0cb999-c320-4142-b261-405215205781)
     )
@@ -9576,7 +9576,7 @@
     (property "Sheetname" "")
     (path "/1f0999f2-759e-4374-9a02-77b34c68d516")
     (attr smd)
-    (fp_text reference "U6" (at -5.6 4.6 90) (layer "B.SilkS")
+    (fp_text reference "U6" (at -5.6 4.6 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 7931cd11-15bb-4bda-836d-0a844bbccde7)
     )
@@ -9699,7 +9699,7 @@
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 208b652f-090c-4377-b75a-c8a07434b6b6)
     )
-    (fp_text value "LED" (at 0 -1.65 90) (layer "B.Fab")
+    (fp_text value "LED RED" (at 0 -1.65 90) (layer "B.Fab")
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 841e6773-18e6-426f-a9de-746574dfe6c8)
     )
@@ -9754,7 +9754,7 @@
     (property "ki_keywords" "flash memory SPI QPI DTR")
     (path "/5c78e541-902a-44c8-869c-5f9ff2bfef63")
     (attr smd)
-    (fp_text reference "U3" (at 16.36 -2.925 90) (layer "B.SilkS")
+    (fp_text reference "U3" (at 16.36 -2.925 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp d59b8dbe-4511-4601-90a3-27ef2c34968b)
     )
@@ -9837,7 +9837,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/579e4e35-359c-44c4-8627-3efdf496b3b4")
     (attr smd)
-    (fp_text reference "C14" (at 3 -0.1) (layer "B.SilkS")
+    (fp_text reference "C14" (at 3 -0.1) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp dae58bc3-2b79-41bf-8ba4-0051a5c7e156)
     )
@@ -9892,7 +9892,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/06a4b0d1-f0a7-4c05-a709-11912b195354")
     (attr smd)
-    (fp_text reference "C11" (at 0.325 -1.5 90) (layer "B.SilkS")
+    (fp_text reference "C11" (at 0.325 -1.5 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp d78dedae-b59b-47eb-b143-8ea801ce3066)
     )
@@ -9947,7 +9947,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/2f537d3e-8179-41ef-ab53-b6c9cd5f90ed")
     (attr smd)
-    (fp_text reference "R23" (at 2.895 0.03 90) (layer "B.SilkS")
+    (fp_text reference "R23" (at 2.895 0.03 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 68c78463-cd08-4890-bd3a-fc080a75a93a)
     )
@@ -10002,7 +10002,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/7163c500-80f1-4668-bdf5-912198127027")
     (attr smd)
-    (fp_text reference "C17" (at -3.3 -0.25 270) (layer "B.SilkS")
+    (fp_text reference "C17" (at -3.3 -0.25 270) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 03eb304a-16af-483b-adbc-3797350e7d99)
     )
@@ -10057,7 +10057,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/c9911fd7-c0f2-4f62-82ce-ad2e8e91bbfb")
     (attr smd)
-    (fp_text reference "R6" (at -2.5 0 90) (layer "B.SilkS")
+    (fp_text reference "R6" (at -2.5 0 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 5412fb00-dd3d-4eba-a4ad-d1f00b73109a)
     )
@@ -10112,7 +10112,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/84e9e750-a06a-4113-b88f-d2535d9f97ba")
     (attr smd)
-    (fp_text reference "C9" (at 3.1 -0.3) (layer "B.SilkS")
+    (fp_text reference "C9" (at 3.1 -0.3) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 3ab9f7db-620b-41ab-9195-bfd92bd42fcb)
     )
@@ -10167,7 +10167,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/9d1aac63-10b1-4b3b-bfee-b962dd120954")
     (attr smd)
-    (fp_text reference "R9" (at 2.4 0 90) (layer "B.SilkS")
+    (fp_text reference "R9" (at 2.4 0 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 60ae29ad-ea9f-4e1c-be3b-73ac7d904070)
     )
@@ -10215,14 +10215,14 @@
     (at 143.875 68.825)
     (descr "surface-mounted straight pin header, 1x05, 2.54mm pitch, single row, style 1 (pin 1 left)")
     (tags "Surface mounted pin header SMD 1x05 2.54mm single row style1 pin1 left")
-    (property "LCSC" "C2883802")
+    (property "LCSC" "C5160788")
     (property "Sheetfile" "glitcher.kicad_sch")
     (property "Sheetname" "")
     (property "ki_description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)")
     (property "ki_keywords" "connector")
     (path "/08b67061-f94a-4744-afea-d615d9a4fba6")
     (attr smd)
-    (fp_text reference "J4" (at 0 7.41) (layer "B.SilkS")
+    (fp_text reference "J4" (at 0 7.41) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp a65d887e-1d67-43c5-b21b-2f5c4ce78b26)
     )
@@ -10331,7 +10331,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/563ced88-574c-4b77-b066-84a995790e31")
     (attr smd)
-    (fp_text reference "C15" (at -3.05 -0.8 90) (layer "B.SilkS")
+    (fp_text reference "C15" (at -3.05 -0.8 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 7ebdef0b-9c1e-428a-a54b-313be5ef62e4)
     )
@@ -10386,7 +10386,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/b731c7bc-cab9-4bef-a11d-50059ced8a88")
     (attr smd)
-    (fp_text reference "C22" (at 3 0 90) (layer "B.SilkS")
+    (fp_text reference "C22" (at 3 0 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 213badf6-22c0-4896-8433-472d3ceaf1a6)
     )
@@ -10441,7 +10441,7 @@
     (property "ki_keywords" "linear regulator ldo fixed positive")
     (path "/452d6a54-2214-449c-a550-a46af12ea48c")
     (attr smd)
-    (fp_text reference "U2" (at 0 4.5 90) (layer "B.SilkS")
+    (fp_text reference "U2" (at 0 4.5 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 66da2b54-b316-4e0b-88c9-ff4e4af83c7a)
     )
@@ -10504,9 +10504,9 @@
     (property "Sheetname" "")
     (property "ki_description" "Dual Operational Amplifiers, DIP-8/SOIC-8/TSSOP-8/VSSOP-8")
     (property "ki_keywords" "dual opamp")
-    (path "/d5e17581-203d-46fb-80e4-23f7ee5570c7")
+    (path "/761c9bd4-501a-4f8b-91e3-1b230ecd0334")
     (attr smd)
-    (fp_text reference "U5" (at -4.5 1.8 90) (layer "B.SilkS")
+    (fp_text reference "U5" (at -4.5 1.8 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 29171fa6-cb30-4ece-b78c-61ee405abd3c)
     )
@@ -10579,7 +10579,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/76ae439e-8bc7-4211-b2f0-f8ee93cb198b")
     (attr smd)
-    (fp_text reference "R7" (at 0 1.43 -270) (layer "B.SilkS")
+    (fp_text reference "R7" (at 0 1.43 -270) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 96e037d3-b3fc-4b23-af23-da4bcbf6c416)
     )
@@ -10634,7 +10634,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/15988405-0bc2-4f4a-ae65-4185e57bb800")
     (attr smd)
-    (fp_text reference "C18" (at 3.2 0.35 90) (layer "B.SilkS")
+    (fp_text reference "C18" (at 3.2 0.35 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp f14046dd-6b42-4eec-90fb-52c3124aba60)
     )
@@ -10689,7 +10689,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/dfed47ac-0beb-4586-8da5-235f68e4156d")
     (attr smd)
-    (fp_text reference "C5" (at 0 1.43) (layer "B.SilkS")
+    (fp_text reference "C5" (at 0 1.43) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 48109149-dcf0-449f-869b-3c5933fead02)
     )
@@ -10744,7 +10744,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/ffa26655-bb06-46e0-98c3-9eb1c9a1b3a5")
     (attr smd)
-    (fp_text reference "R26" (at 2.895 0.03 90) (layer "B.SilkS")
+    (fp_text reference "R26" (at 2.895 0.03 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 7baa274d-536a-452d-9f23-c9615a4d9831)
     )
@@ -10799,7 +10799,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/37942c9b-c2fe-46f5-aeba-616987d7c158")
     (attr smd)
-    (fp_text reference "R10" (at 0 1.43 90) (layer "B.SilkS")
+    (fp_text reference "R10" (at 0 1.43 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 79d23364-1d9e-4078-982c-2e5ab72649af)
     )
@@ -10854,7 +10854,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/e2c226f1-61af-4c30-922f-60b7b3db3a0b")
     (attr smd)
-    (fp_text reference "R8" (at -0.9 -1.4) (layer "B.SilkS")
+    (fp_text reference "R8" (at -0.9 -1.4) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 8a93fab3-03eb-438e-bc5a-353357b478e7)
     )
@@ -10909,7 +10909,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/6f9d8233-980b-4853-a77b-f46a034b85a2")
     (attr smd)
-    (fp_text reference "R14" (at 2.975 -0.025 90) (layer "B.SilkS")
+    (fp_text reference "R14" (at 2.975 -0.025 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp d35b0b70-3901-430d-8efb-e4cb3151b68d)
     )
@@ -10964,7 +10964,7 @@
     (property "ki_keywords" "N-Channel MOSFET")
     (path "/36d38b08-608b-4535-8778-978076493ef1")
     (attr smd)
-    (fp_text reference "Q1" (at 0 2.4) (layer "B.SilkS")
+    (fp_text reference "Q1" (at 0 2.4) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp fb5d8b77-e69d-4f6a-b3dc-9322cdf885ee)
     )
@@ -11027,7 +11027,7 @@
     (property "ki_keywords" "quartz ceramic resonator oscillator")
     (path "/417c8e07-8cd5-4eef-ba0e-768b0a01b482")
     (attr smd)
-    (fp_text reference "Y1" (at 0 2.45) (layer "B.SilkS")
+    (fp_text reference "Y1" (at 0 2.45) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 47a972cc-1ccf-4a50-bf8c-437e6f03a227)
     )
@@ -11088,7 +11088,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/38762e75-33f5-4f25-b06f-afa85b5219c7")
     (attr smd)
-    (fp_text reference "C26" (at 2.275 0.65 -180) (layer "B.SilkS")
+    (fp_text reference "C26" (at 2.275 0.65 -180) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 39685e98-04c4-4ec4-89bf-8d8be1f18990)
     )
@@ -11143,7 +11143,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/6aa8a873-c4cf-4f8a-a1bb-5fcd317cfebd")
     (attr smd)
-    (fp_text reference "C20" (at 0.1 -1.4) (layer "B.SilkS")
+    (fp_text reference "C20" (at 0.1 -1.4) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 9cfe7149-9d52-46a1-b1fd-728bc74d676f)
     )
@@ -11198,7 +11198,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/57993adf-100e-42cd-a65c-957fa38ea98e")
     (attr smd)
-    (fp_text reference "C10" (at 0 1.43 90) (layer "B.SilkS")
+    (fp_text reference "C10" (at 0 1.43 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 26c427b9-e632-46c1-8472-8191fa0fc5cf)
     )
@@ -11253,7 +11253,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/9db36ee4-d733-4535-a08c-b5f013d33d05")
     (attr smd)
-    (fp_text reference "C28" (at 0 1.43) (layer "B.SilkS")
+    (fp_text reference "C28" (at 0 1.43) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp d82f9064-bbce-4511-bdfe-703b58db6184)
     )
@@ -11301,14 +11301,14 @@
     (at 129.445 83.46 180)
     (descr "surface-mounted straight pin header, 1x03, 2.54mm pitch, single row, style 1 (pin 1 left)")
     (tags "Surface mounted pin header SMD 1x03 2.54mm single row style1 pin1 left")
-    (property "LCSC" "C780061")
+    (property "LCSC" "C5160786")
     (property "Sheetfile" "glitcher.kicad_sch")
     (property "Sheetname" "")
     (property "ki_description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)")
     (property "ki_keywords" "connector")
     (path "/86533d18-5ece-4a10-8913-4799ccc81247")
     (attr smd)
-    (fp_text reference "J5" (at 2.545 3.46) (layer "B.SilkS")
+    (fp_text reference "J5" (at 2.545 3.46) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 31096bd0-699e-4eb7-afa7-957e3d521a3c)
     )
@@ -11396,7 +11396,7 @@
     (property "ki_keywords" "test point tp")
     (path "/612ede90-9255-46df-94df-d7322fcff58c")
     (attr exclude_from_pos_files)
-    (fp_text reference "TP1" (at -2.9 0.05) (layer "B.SilkS")
+    (fp_text reference "TP1" (at -2.9 0.05) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp e4dc004b-ceb8-409c-9fb2-9fbf10fb45c4)
     )
@@ -11428,11 +11428,11 @@
     (property "ki_keywords" "LED diode")
     (path "/5a59f9ea-d8d5-4013-8fbf-cbc818a55318")
     (attr smd)
-    (fp_text reference "D3" (at 0 1.65 90) (layer "B.SilkS")
+    (fp_text reference "D3" (at 0 1.65 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp b3fc983c-aad2-4504-a0d3-9d069874995d)
     )
-    (fp_text value "LED" (at 0 -1.65 90) (layer "B.Fab")
+    (fp_text value "LED YELLOW" (at 0 -1.65 90) (layer "B.Fab")
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 6e62e09d-c515-42d8-8d52-70f01f350667)
     )
@@ -11487,7 +11487,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/01e5e84c-321d-4494-88bc-0e51e0a9f683")
     (attr smd)
-    (fp_text reference "C24" (at 0 1.43) (layer "B.SilkS")
+    (fp_text reference "C24" (at 0 1.43) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 02e4e852-d278-470b-8bc9-56fe8086d8f8)
     )
@@ -11542,7 +11542,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/1ec737e5-8c83-488c-9c8f-dc8128cbdfb2")
     (attr smd)
-    (fp_text reference "C4" (at 2.225 0.4 -180) (layer "B.SilkS")
+    (fp_text reference "C4" (at 2.225 0.4 -180) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 3f235052-ca33-4ee1-b3d3-a1a017546291)
     )
@@ -11597,7 +11597,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/5c597545-6303-42b4-a448-91b355ed4001")
     (attr smd)
-    (fp_text reference "C16" (at 0 1.43) (layer "B.SilkS")
+    (fp_text reference "C16" (at 0 1.43) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 7ed0f7f5-caf2-4157-9604-6842c6c3b763)
     )
@@ -11645,14 +11645,14 @@
     (at 157.875 68.825)
     (descr "surface-mounted straight pin header, 1x05, 2.54mm pitch, single row, style 1 (pin 1 left)")
     (tags "Surface mounted pin header SMD 1x05 2.54mm single row style1 pin1 left")
-    (property "LCSC" "C2883802")
+    (property "LCSC" "C5160788")
     (property "Sheetfile" "glitcher.kicad_sch")
     (property "Sheetname" "")
     (property "ki_description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)")
     (property "ki_keywords" "connector")
     (path "/8532fe9c-6d7a-471e-98c0-5a70d28f6082")
     (attr smd)
-    (fp_text reference "J3" (at -4.375 6.375) (layer "B.SilkS")
+    (fp_text reference "J3" (at -4.375 6.375) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 594169d5-922e-4d52-b81b-7aea1ba9639d)
     )
@@ -11761,7 +11761,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/a654c091-3fe3-4762-a327-f44677cf9c9a")
     (attr smd)
-    (fp_text reference "C21" (at 3 -0.1 90) (layer "B.SilkS")
+    (fp_text reference "C21" (at 3 -0.1 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 71ed6aa8-4a9b-4ac8-a869-b9acac8be650)
     )
@@ -11816,7 +11816,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/7c36e0f6-f00a-43fb-a036-0d93be6a013d")
     (attr smd)
-    (fp_text reference "R27" (at 0 6.095) (layer "B.SilkS")
+    (fp_text reference "R27" (at 0 6.095) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp f79e26b1-3533-448e-a66f-1514e936bfbd)
     )
@@ -11871,7 +11871,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/c6127da2-2773-41f4-b430-17b741249426")
     (attr smd)
-    (fp_text reference "R12" (at 0 1.43 90) (layer "B.SilkS")
+    (fp_text reference "R12" (at 0 1.43 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 4671dabd-12cf-41fa-9b0d-fbe68c0302f5)
     )
@@ -11926,7 +11926,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/d1b89057-a3fc-41d2-906a-73f06dc4d5a5")
     (attr smd)
-    (fp_text reference "R5" (at -2.5 -0.2 90) (layer "B.SilkS")
+    (fp_text reference "R5" (at -2.5 -0.2 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp ed3d05b7-65a7-4b51-a532-4b12becdb1cc)
     )
@@ -11981,7 +11981,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/6f8f7fa5-da12-46b4-ab68-7b1ba811471c")
     (attr smd)
-    (fp_text reference "R13" (at 2.975 -0.025 90) (layer "B.SilkS")
+    (fp_text reference "R13" (at 2.975 -0.025 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 4a955132-b7cd-4eea-859f-d8631ca7398e)
     )
@@ -12036,7 +12036,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/f0e85d12-5a47-4819-a020-b272ae84f486")
     (attr smd)
-    (fp_text reference "C3" (at -2.475 -0.05 90) (layer "B.SilkS")
+    (fp_text reference "C3" (at -2.475 -0.05 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 6902f9c0-201f-4bbf-a8bd-7320adf210f3)
     )
@@ -12091,7 +12091,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/e9045426-d529-4085-94e5-0cd28f285721")
     (attr smd)
-    (fp_text reference "R31" (at -4.4 -0.2 180) (layer "B.SilkS")
+    (fp_text reference "R31" (at -4.4 -0.2 180) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp cba18f0e-e1bd-4d83-8c64-80aa656c35f6)
     )
@@ -12146,7 +12146,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/62998794-3d41-424b-88b9-201e7ee1b37c")
     (attr smd)
-    (fp_text reference "C12" (at 2.975 0.1) (layer "B.SilkS")
+    (fp_text reference "C12" (at 2.975 0.1) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 5ffadeb5-fabc-4acb-9a0b-90cd0693bb2a)
     )
@@ -12201,7 +12201,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/e0d0c386-f8dd-4af5-93e7-6fec4b9650f6")
     (attr smd)
-    (fp_text reference "R11" (at 0 1.43) (layer "B.SilkS")
+    (fp_text reference "R11" (at 0 1.43) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 5529c6e4-7bc2-4c5a-b4aa-599e0a740d3e)
     )
@@ -12311,7 +12311,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/91b00297-c777-4b1c-8cfc-209a99f155c9")
     (attr smd)
-    (fp_text reference "R20" (at 0 -3.02) (layer "B.SilkS")
+    (fp_text reference "R20" (at 0 -3.02) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp d5efd7d0-e903-4332-89dd-a5ce7f1bd5f6)
     )
@@ -12366,7 +12366,7 @@
     (property "ki_keywords" "usb universal serial bus type-C USB2.0")
     (path "/3d4785fa-d33f-4f83-9b4f-0f52e047a58a")
     (attr smd)
-    (fp_text reference "J1" (at 0 5.645 45) (layer "B.SilkS")
+    (fp_text reference "J1" (at 0 5.645 45) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp af0763b2-14ae-4007-af68-0da541af44e5)
     )
@@ -12465,7 +12465,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/79e72eca-98e1-45c7-8f77-92e4def9b10d")
     (attr smd)
-    (fp_text reference "C13" (at 2.9 0.1) (layer "B.SilkS")
+    (fp_text reference "C13" (at 2.9 0.1) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp b0908dbe-3020-47bd-9306-869506d354c5)
     )
@@ -12520,7 +12520,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/ec68f347-46f8-464c-a93b-cf76484cb6e2")
     (attr smd)
-    (fp_text reference "R22" (at 0 -1.455) (layer "B.SilkS")
+    (fp_text reference "R22" (at 0 -1.455) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 653639fa-92bd-4172-b1c4-8efa6fd5c524)
     )
@@ -12630,7 +12630,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/7560dbee-9deb-4c75-8385-efec0335c459")
     (attr smd)
-    (fp_text reference "C29" (at 1.2 1.7 270) (layer "B.SilkS")
+    (fp_text reference "C29" (at 1.2 1.7 270) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 4b988228-6f1c-4817-a072-4086674c2e86)
     )
@@ -12740,7 +12740,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/3d2c93bf-f8da-43b5-93d4-e2ff02806d15")
     (attr smd)
-    (fp_text reference "C1" (at 0 1.68) (layer "B.SilkS")
+    (fp_text reference "C1" (at 0 1.68) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 88de3775-540e-42ca-b1f9-daff0aca8976)
     )
@@ -12795,7 +12795,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/e63ba9bd-f623-458f-a251-f2e658e838e8")
     (attr smd)
-    (fp_text reference "R2" (at 2.522056 0 135) (layer "B.SilkS")
+    (fp_text reference "R2" (at 2.522056 0 135) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp ea2a07b6-83aa-425e-8486-a8e168f3c435)
     )
@@ -12850,7 +12850,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/22175d90-874d-4ea6-aa92-413d3bc5f481")
     (attr smd)
-    (fp_text reference "C7" (at -2.575 0.225 90) (layer "B.SilkS")
+    (fp_text reference "C7" (at -2.575 0.225 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp f9703226-3cfc-4c1c-b76d-f14528c1687b)
     )
@@ -12905,7 +12905,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/3717d9fe-5ed9-4714-b900-038d7e61fa5d")
     (attr smd)
-    (fp_text reference "C23" (at 2 -0.025 90) (layer "B.SilkS")
+    (fp_text reference "C23" (at 2 -0.025 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp bd0de5de-c1e1-4442-873a-df8df63e4e58)
     )
@@ -12960,7 +12960,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/602b951f-4531-4155-8777-d295ef52f13b")
     (attr smd)
-    (fp_text reference "R30" (at -0.02 2.995) (layer "B.SilkS")
+    (fp_text reference "R30" (at -0.02 2.995) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp e0ac8069-9796-4c00-9229-7db0123896b5)
     )
@@ -13015,7 +13015,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/caf0b100-1e6e-43ba-a6dc-637813d9f4a4")
     (attr smd)
-    (fp_text reference "R21" (at -0.5 1.43 90) (layer "B.SilkS")
+    (fp_text reference "R21" (at -0.5 1.43 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 4fee69dc-d6f6-4ea2-a7d4-261ac3b4f19a)
     )
@@ -13125,7 +13125,7 @@
     (property "ki_keywords" "RP2040 ARM Cortex-M0+ USB")
     (path "/3bdaf7a6-4d52-4990-b433-6ef9a6ee8e6b")
     (attr smd)
-    (fp_text reference "U1" (at 0.4625 4.8 90) (layer "B.SilkS")
+    (fp_text reference "U1" (at 0.4625 4.8 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 77633f12-261b-4896-bd3a-799e55a28eb1)
     )
@@ -13169,10 +13169,10 @@
       (stroke (width 0.1) (type solid)) (layer "B.Fab") (tstamp cc17e4f0-4b9d-4f30-baed-ac65c1f9b8df))
     (fp_line (start 3.5 3.5) (end 3.5 -3.5)
       (stroke (width 0.1) (type solid)) (layer "B.Fab") (tstamp 4cc691da-605e-431b-a1f6-a65062267df5))
-    (pad "" smd roundrect (at -0.8 -0.8 90) (size 1.29 1.29) (layers "B.Paste") (roundrect_rratio 0.193798) (tstamp 0f9f8a70-e2c4-4452-acb2-e2d6d3152fb4))
-    (pad "" smd roundrect (at -0.8 0.8 90) (size 1.29 1.29) (layers "B.Paste") (roundrect_rratio 0.193798) (tstamp 82ada7a3-b5d8-49bf-83ee-d2e66b7b3d2c))
-    (pad "" smd roundrect (at 0.8 -0.8 90) (size 1.29 1.29) (layers "B.Paste") (roundrect_rratio 0.193798) (tstamp b2915736-e359-41c0-b9b6-65751be7de5a))
-    (pad "" smd roundrect (at 0.8 0.8 90) (size 1.29 1.29) (layers "B.Paste") (roundrect_rratio 0.193798) (tstamp b30c5456-6c4c-4d1b-9d5d-34f37e91067f))
+    (pad "" smd roundrect (at -0.8 -0.8 90) (size 1.29 1.29) (layers "B.Paste") (roundrect_rratio 0.1937976744) (tstamp 0f9f8a70-e2c4-4452-acb2-e2d6d3152fb4))
+    (pad "" smd roundrect (at -0.8 0.8 90) (size 1.29 1.29) (layers "B.Paste") (roundrect_rratio 0.1937976744) (tstamp 82ada7a3-b5d8-49bf-83ee-d2e66b7b3d2c))
+    (pad "" smd roundrect (at 0.8 -0.8 90) (size 1.29 1.29) (layers "B.Paste") (roundrect_rratio 0.1937976744) (tstamp b2915736-e359-41c0-b9b6-65751be7de5a))
+    (pad "" smd roundrect (at 0.8 0.8 90) (size 1.29 1.29) (layers "B.Paste") (roundrect_rratio 0.1937976744) (tstamp b30c5456-6c4c-4d1b-9d5d-34f37e91067f))
     (pad "1" smd roundrect (at -3.4375 2.6 90) (size 0.875 0.2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25)
       (net 3 "+3.3V") (pinfunction "IOVDD") (pintype "power_in") (tstamp 22a639f9-c9d6-4ae1-b4f4-caa5f6f4c0cc))
     (pad "2" smd roundrect (at -3.4375 2.2 90) (size 0.875 0.2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25)
@@ -13306,7 +13306,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/ca804b4e-f7a8-472c-922d-b63239a79f9a")
     (attr smd)
-    (fp_text reference "C2" (at -1 -1.85) (layer "B.SilkS")
+    (fp_text reference "C2" (at -1 -1.85) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 2c9e529e-beb3-4fd7-9abf-f8db7508f883)
     )
@@ -13361,7 +13361,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/2e8cee00-eb35-4113-8ae6-6e52d16b13a1")
     (attr smd)
-    (fp_text reference "C27" (at 3 0 90) (layer "B.SilkS")
+    (fp_text reference "C27" (at 3 0 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp f4a5bf1a-2acb-4ef1-8a72-e2ad82d28926)
     )
@@ -13416,7 +13416,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/80e24ceb-4570-4430-9039-c1fca7670c2b")
     (attr smd)
-    (fp_text reference "C6" (at 0 1.43 90) (layer "B.SilkS")
+    (fp_text reference "C6" (at 0 1.43 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 2c3a7897-0ea2-4b63-91eb-95641249d5d3)
     )
@@ -13471,7 +13471,7 @@
     (property "ki_keywords" "linear regulator ldo fixed positive")
     (path "/ccca2b85-76d3-4004-b37e-dccc8cdae403")
     (attr smd)
-    (fp_text reference "U4" (at -5.2 2.75 180) (layer "B.SilkS")
+    (fp_text reference "U4" (at -5.2 2.75 180) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp f58beb30-8651-4b42-9218-10c8d3363b13)
     )
@@ -13536,7 +13536,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/a7159aba-4a50-4de9-8b37-1c7a6f15a194")
     (attr smd)
-    (fp_text reference "C25" (at 0.975 1.43 90) (layer "B.SilkS")
+    (fp_text reference "C25" (at 0.975 1.43 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp e77d6ac7-2253-4aee-b17d-c723eb6450f5)
     )
@@ -13584,14 +13584,14 @@
     (at 158.1 87.545 -90)
     (descr "surface-mounted straight pin header, 1x03, 2.54mm pitch, single row, style 1 (pin 1 left)")
     (tags "Surface mounted pin header SMD 1x03 2.54mm single row style1 pin1 left")
-    (property "LCSC" "C780061")
+    (property "LCSC" "C5160786")
     (property "Sheetfile" "glitcher.kicad_sch")
     (property "Sheetname" "")
     (property "ki_description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)")
     (property "ki_keywords" "connector")
     (path "/a75b67a7-6a08-465c-b096-5d82f81682be")
     (attr smd)
-    (fp_text reference "J7" (at 0 4.87 90) (layer "B.SilkS")
+    (fp_text reference "J7" (at 0 4.87 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp df5d9945-dda5-4c3f-afbd-fbe9d7f65e19)
     )
@@ -13680,7 +13680,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/2a23e7aa-0d97-4666-836f-6cc923b0691d")
     (attr smd)
-    (fp_text reference "R4" (at -2.4 0 90) (layer "B.SilkS")
+    (fp_text reference "R4" (at -2.4 0 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp b75d2fa8-1a89-4a53-995e-143c84ff0835)
     )
@@ -13735,7 +13735,7 @@
     (property "ki_keywords" "cap capacitor")
     (path "/e2b59870-738e-4454-89f5-46e6deeb68a2")
     (attr smd)
-    (fp_text reference "C19" (at -2.8 0.05) (layer "B.SilkS")
+    (fp_text reference "C19" (at -2.8 0.05) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 3dc91562-26cc-4769-b151-710b9345fd21)
     )
@@ -13790,7 +13790,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/c2e754a9-4635-46cb-8793-f2af5f847a3e")
     (attr smd)
-    (fp_text reference "R25" (at 2.9 -0.075 90) (layer "B.SilkS")
+    (fp_text reference "R25" (at 2.9 -0.075 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp b768be74-e684-4f96-8e74-b0670f1c7db9)
     )
@@ -13838,14 +13838,14 @@
     (at 133 68.9)
     (descr "surface-mounted straight pin header, 1x05, 2.54mm pitch, single row, style 1 (pin 1 left)")
     (tags "Surface mounted pin header SMD 1x05 2.54mm single row style1 pin1 left")
-    (property "LCSC" "C2883802")
+    (property "LCSC" "C5160788")
     (property "Sheetfile" "glitcher.kicad_sch")
     (property "Sheetname" "")
     (property "ki_description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)")
     (property "ki_keywords" "connector")
     (path "/a22c7bd7-5a22-43e4-869e-4b03d105845b")
     (attr smd)
-    (fp_text reference "J6" (at 0 7.41) (layer "B.SilkS")
+    (fp_text reference "J6" (at 0 7.41) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp b074ddd4-c07f-4be4-b8e0-929b0acebffa)
     )
@@ -13954,7 +13954,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/8add4929-21ba-4dea-87bf-a77d74bd2ba7")
     (attr smd)
-    (fp_text reference "R17" (at -0.055 -6.02) (layer "B.SilkS")
+    (fp_text reference "R17" (at -0.055 -6.02) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 7d28351a-9191-40af-aee4-0041df814979)
     )
@@ -14009,7 +14009,7 @@
     (property "ki_keywords" "R res resistor")
     (path "/fea211d2-2bfb-46a6-b359-df0ee66a41fd")
     (attr smd)
-    (fp_text reference "R24" (at 2.9 0.025 90) (layer "B.SilkS")
+    (fp_text reference "R24" (at 2.9 0.025 90) (layer "B.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 294069be-c94a-41d3-926c-9f18d2a0e4e6)
     )
@@ -14581,13 +14581,16 @@
   (gr_text "JW" (at 138.25 96.5) (layer "B.Cu") (tstamp 7b1a4fa1-ba01-48fa-b78a-d3ac6d2a523a)
     (effects (font (size 1.3 1.3) (thickness 0.2)) (justify left bottom mirror))
   )
+  (gr_text "Art by\nankhaneko.art" (at 144.907 123.952) (layer "B.SilkS") (tstamp 0d03e3bf-8737-499f-ad07-787da7e6d7f3)
+    (effects (font (size 0.8 0.8) (thickness 0.1) bold) (justify left bottom mirror))
+  )
   (gr_text "ARM" (at 132.8 99 90) (layer "B.SilkS") (tstamp 228a7810-16ab-4eae-a6fc-81efae1abd07)
     (effects (font (size 1 1) (thickness 0.15)) (justify left bottom mirror))
   )
-  (gr_text "GLITCHER" (at 155.5 89.65 90) (layer "B.SilkS" knockout) (tstamp 53c3ef21-3d72-4f6c-aaa3-6ac5b2c000fd)
+  (gr_text "GLITCHER" (at 156.337 89.662 90) (layer "B.SilkS" knockout) (tstamp 53c3ef21-3d72-4f6c-aaa3-6ac5b2c000fd)
     (effects (font (size 1 1) (thickness 0.15)) (justify left bottom mirror))
   )
-  (gr_text "<- ADC" (at 127.5 84.25 90) (layer "B.SilkS" knockout) (tstamp 6c79c901-69ff-4ba9-965f-67c7697b838e)
+  (gr_text "<- ADC" (at 127.5 84.709 90) (layer "B.SilkS" knockout) (tstamp 6c79c901-69ff-4ba9-965f-67c7697b838e)
     (effects (font (size 1 1) (thickness 0.15)) (justify left bottom mirror))
   )
   (gr_text "TRIG" (at 131 98.8 90) (layer "B.SilkS") (tstamp 7eb83afd-e1f7-4997-b9a0-5c1d1b853dcc)
@@ -14596,17 +14599,482 @@
   (gr_text "GND\n" (at 133.025 81.975 90) (layer "B.SilkS") (tstamp 86049342-1485-4dd7-ab9f-761e113eb29c)
     (effects (font (size 1 1) (thickness 0.15)) (justify left bottom mirror))
   )
-  (gr_text "INPUT" (at 155.3 59.7) (layer "B.SilkS" knockout) (tstamp 91d89485-3d35-40d9-b1a5-525e54fbc12f)
-    (effects (font (size 2 2) (thickness 0.3)) (justify left bottom mirror))
+  (gr_text "INPUT" (at 153.67 59.7) (layer "B.SilkS" knockout) (tstamp 91d89485-3d35-40d9-b1a5-525e54fbc12f)
+    (effects (font (size 1.2 1.2) (thickness 0.15)) (justify left bottom mirror))
   )
   (gr_text "GND\nSIG\nGND\n" (at 160.3 81.6 90) (layer "B.SilkS") (tstamp c087ac89-770c-4704-acb7-2e4a722635a6)
     (effects (font (size 1 1) (thickness 0.15)) (justify left bottom mirror))
   )
-  (gr_text "OUT" (at 140 59.7) (layer "B.SilkS" knockout) (tstamp c3524cfb-d49d-4fd2-8379-9cf8d5aed8a0)
-    (effects (font (size 2 2) (thickness 0.3)) (justify left bottom mirror))
+  (gr_text "OUTPUT" (at 139.827 59.7) (layer "B.SilkS" knockout) (tstamp c3524cfb-d49d-4fd2-8379-9cf8d5aed8a0)
+    (effects (font (size 1.2 1.2) (thickness 0.15)) (justify left bottom mirror))
   )
   (gr_text "USB" (at 129 99 90) (layer "B.SilkS") (tstamp f4936815-74bc-4a7f-bc2c-1c217c5e367c)
     (effects (font (size 1 1) (thickness 0.15)) (justify left bottom mirror))
+  )
+  (gr_text "BOLT" (at 156.083 71.501 90) (layer "F.SilkS" knockout) (tstamp 46a3f6cb-68f4-470d-88ab-f84b3a8e2f20)
+    (effects (font (face "Fairlight") (size 2 2) (thickness 0.15)) (justify left bottom))
+    (render_cache "BOLT" 90
+      (polygon
+        (pts
+          (xy 154.648792 69.619841)          (xy 154.930159 69.619841)          (xy 154.930159 69.350197)          (xy 155.461632 69.350197)
+          (xy 155.461632 69.619841)          (xy 155.743 69.619841)          (xy 155.743 71.231844)          (xy 154.398687 71.231844)
+          (xy 154.398687 70.69451)          (xy 154.648792 70.69451)          (xy 154.648792 70.157175)          (xy 154.398687 70.157175)
+          (xy 154.398687 69.887531)          (xy 154.930159 69.887531)          (xy 154.930159 70.69451)          (xy 155.461632 70.69451)
+          (xy 155.461632 70.157175)          (xy 155.211527 70.157175)          (xy 155.211527 69.887531)          (xy 154.930159 69.887531)
+          (xy 154.398687 69.887531)          (xy 154.148582 69.887531)          (xy 154.148582 71.231844)          (xy 153.867214 71.231844)
+          (xy 153.867214 69.619841)          (xy 154.148582 69.619841)          (xy 154.148582 69.350197)          (xy 154.648792 69.350197)
+        )
+      )
+      (polygon
+        (pts
+          (xy 155.461632 67.470504)          (xy 155.743 67.470504)          (xy 155.743 68.814328)          (xy 155.461632 68.814328)
+          (xy 155.461632 69.082507)          (xy 154.148582 69.082507)          (xy 154.148582 68.814328)          (xy 153.867214 68.814328)
+          (xy 153.867214 67.738194)          (xy 154.148582 67.738194)          (xy 154.148582 68.276994)          (xy 154.398687 68.276994)
+          (xy 154.398687 68.545173)          (xy 155.461632 68.545173)          (xy 155.461632 68.007838)          (xy 155.211527 68.007838)
+          (xy 155.211527 67.738194)          (xy 154.148582 67.738194)          (xy 153.867214 67.738194)          (xy 153.867214 67.470504)
+          (xy 154.148582 67.470504)          (xy 154.148582 67.20086)          (xy 155.461632 67.20086)
+        )
+      )
+      (polygon
+        (pts
+          (xy 154.148582 66.395836)          (xy 154.148582 66.93317)          (xy 153.867214 66.93317)          (xy 153.867214 66.395836)
+        )
+      )
+      (polygon
+        (pts
+          (xy 155.461632 65.051523)          (xy 155.461632 65.321167)          (xy 155.743 65.321167)          (xy 155.743 66.93317)
+          (xy 154.399175 66.93317)          (xy 154.399175 66.395836)          (xy 155.461632 66.395836)          (xy 155.461632 65.858501)
+          (xy 155.180264 65.858501)          (xy 155.180264 65.051523)
+        )
+      )
+      (polygon
+        (pts
+          (xy 154.148582 62.902186)          (xy 154.148582 64.783833)          (xy 153.867214 64.783833)          (xy 153.867214 62.902186)
+        )
+      )
+      (polygon
+        (pts
+          (xy 155.743 63.17183)          (xy 155.743 63.97832)          (xy 155.461632 63.97832)          (xy 155.461632 64.246498)
+          (xy 154.399175 64.246498)          (xy 154.399175 63.43952)          (xy 155.461632 63.43952)          (xy 155.461632 63.17183)
+        )
+      )
+    )
+  )
+  (gr_text "Glitching multitool\nby curious.supplies" (at 159.639 70.612 90) (layer "F.SilkS") (tstamp dae0abe9-eb89-4070-a743-83314682b90b)
+    (effects (font (face "Fairlight") (size 0.8 0.8) (thickness 0.15)) (justify bottom))
+    (render_cache "Glitching multitool\nby curious.supplies" 90
+      (polygon
+        (pts
+          (xy 158.046452 77.919158)          (xy 158.046452 78.027016)          (xy 158.159 78.027016)          (xy 158.159 78.564546)
+          (xy 158.046452 78.564546)          (xy 158.046452 78.671817)          (xy 157.521233 78.671817)          (xy 157.521233 78.564546)
+          (xy 157.408685 78.564546)          (xy 157.408685 78.027016)          (xy 157.521233 78.027016)          (xy 157.521233 77.919158)
+          (xy 157.63378 77.919158)          (xy 157.63378 78.134092)          (xy 157.521233 78.134092)          (xy 157.521233 78.349612)
+          (xy 157.63378 78.349612)          (xy 157.63378 78.456884)          (xy 158.046452 78.456884)          (xy 158.046452 78.24195)
+          (xy 157.946411 78.24195)          (xy 157.946411 78.134092)          (xy 157.833863 78.134092)          (xy 157.833863 78.24195)
+          (xy 157.721316 78.24195)          (xy 157.721316 77.919158)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 77.597149)          (xy 157.521233 77.812082)          (xy 157.408685 77.812082)          (xy 157.408685 77.597149)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.046452 77.059424)          (xy 158.046452 77.167281)          (xy 158.159 77.167281)          (xy 158.159 77.812082)
+          (xy 157.62147 77.812082)          (xy 157.62147 77.597149)          (xy 158.046452 77.597149)          (xy 158.046452 77.382215)
+          (xy 157.933905 77.382215)          (xy 157.933905 77.059424)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 76.307546)          (xy 157.521233 76.952348)          (xy 157.408685 76.952348)          (xy 157.408685 76.307546)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.159 76.307546)          (xy 158.159 76.845076)          (xy 158.046452 76.845076)          (xy 158.046452 76.737414)
+          (xy 157.62147 76.737414)          (xy 157.62147 76.52248)          (xy 158.046452 76.52248)          (xy 158.046452 76.307546)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 75.339954)          (xy 157.521233 76.092613)          (xy 157.408685 76.092613)          (xy 157.408685 75.339954)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.159 75.447812)          (xy 158.159 75.770408)          (xy 158.046452 75.770408)          (xy 158.046452 75.877679)
+          (xy 157.62147 75.877679)          (xy 157.62147 75.554888)          (xy 158.046452 75.554888)          (xy 158.046452 75.447812)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.046452 74.480219)          (xy 158.046452 74.588077)          (xy 158.159 74.588077)          (xy 158.159 75.017944)
+          (xy 158.046452 75.017944)          (xy 158.046452 75.125607)          (xy 157.621274 75.125607)          (xy 157.621274 75.017944)
+          (xy 157.521233 75.017944)          (xy 157.521233 74.910673)          (xy 157.408685 74.910673)          (xy 157.408685 74.480219)
+          (xy 157.521233 74.480219)          (xy 157.521233 74.803011)          (xy 157.621274 74.803011)          (xy 157.621274 74.910673)
+          (xy 158.046452 74.910673)          (xy 158.046452 74.695153)          (xy 157.933905 74.695153)          (xy 157.933905 74.480219)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 74.158209)          (xy 157.521233 74.373143)          (xy 157.408685 74.373143)          (xy 157.408685 74.158209)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.159 73.620484)          (xy 158.159 73.835418)          (xy 157.833863 73.835418)          (xy 157.833863 74.158209)
+          (xy 158.046452 74.158209)          (xy 158.046452 74.050938)          (xy 158.159 74.050938)          (xy 158.159 74.265872)
+          (xy 158.046452 74.265872)          (xy 158.046452 74.373143)          (xy 157.62147 74.373143)          (xy 157.62147 74.158209)
+          (xy 157.721316 74.158209)          (xy 157.721316 73.835418)          (xy 157.408685 73.835418)          (xy 157.408685 73.620484)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 72.868607)          (xy 157.521233 73.513408)          (xy 157.408685 73.513408)          (xy 157.408685 72.868607)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.159 72.868607)          (xy 158.159 73.406137)          (xy 158.046452 73.406137)          (xy 158.046452 73.298475)
+          (xy 157.62147 73.298475)          (xy 157.62147 73.083541)          (xy 158.046452 73.083541)          (xy 158.046452 72.868607)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 71.901015)          (xy 157.521233 72.115948)          (xy 157.408685 72.115948)          (xy 157.408685 71.901015)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.159 71.901015)          (xy 158.159 72.115948)          (xy 157.946411 72.115948)          (xy 157.946411 72.223806)
+          (xy 157.833863 72.223806)          (xy 157.833863 72.43874)          (xy 158.046452 72.43874)          (xy 158.046452 72.331468)
+          (xy 158.159 72.331468)          (xy 158.159 72.546402)          (xy 158.046452 72.546402)          (xy 158.046452 72.653673)
+          (xy 157.521233 72.653673)          (xy 157.521233 72.546402)          (xy 157.408685 72.546402)          (xy 157.408685 72.331468)
+          (xy 157.621274 72.331468)          (xy 157.621274 72.223806)          (xy 157.733822 72.223806)          (xy 157.733822 72.115948)
+          (xy 157.621274 72.115948)          (xy 157.621274 71.901015)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.046452 71.04128)          (xy 158.046452 71.149138)          (xy 158.159 71.149138)          (xy 158.159 71.686667)
+          (xy 158.046452 71.686667)          (xy 158.046452 71.793939)          (xy 157.521233 71.793939)          (xy 157.521233 71.686667)
+          (xy 157.408685 71.686667)          (xy 157.408685 71.149138)          (xy 157.521233 71.149138)          (xy 157.521233 71.04128)
+          (xy 157.63378 71.04128)          (xy 157.63378 71.256214)          (xy 157.521233 71.256214)          (xy 157.521233 71.471734)
+          (xy 157.63378 71.471734)          (xy 157.63378 71.579005)          (xy 158.046452 71.579005)          (xy 158.046452 71.364071)
+          (xy 157.946411 71.364071)          (xy 157.946411 71.256214)          (xy 157.833863 71.256214)          (xy 157.833863 71.364071)
+          (xy 157.721316 71.364071)          (xy 157.721316 71.04128)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 69.32181)          (xy 157.521233 69.536744)          (xy 157.408685 69.536744)          (xy 157.408685 69.32181)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.159 69.32181)          (xy 158.159 69.536744)          (xy 157.733822 69.536744)          (xy 157.733822 69.644602)
+          (xy 157.944066 69.644602)          (xy 157.944066 69.752264)          (xy 157.733822 69.752264)          (xy 157.733822 69.859535)
+          (xy 158.046452 69.859535)          (xy 158.046452 69.752264)          (xy 158.159 69.752264)          (xy 158.159 69.967198)
+          (xy 158.046452 69.967198)          (xy 158.046452 70.074469)          (xy 157.621274 70.074469)          (xy 157.621274 69.967198)
+          (xy 157.521233 69.967198)          (xy 157.521233 69.859535)          (xy 157.408685 69.859535)          (xy 157.408685 69.752264)
+          (xy 157.521233 69.752264)          (xy 157.521233 69.644602)          (xy 157.621274 69.644602)          (xy 157.621274 69.32181)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 68.462075)          (xy 157.521233 68.677009)          (xy 157.408685 68.677009)          (xy 157.408685 68.462075)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.159 68.462075)          (xy 158.159 68.999801)          (xy 158.046452 68.999801)          (xy 158.046452 69.107463)
+          (xy 157.946411 69.107463)          (xy 157.946411 69.214734)          (xy 157.408685 69.214734)          (xy 157.408685 68.999801)
+          (xy 157.946411 68.999801)          (xy 157.946411 68.892529)          (xy 158.046452 68.892529)          (xy 158.046452 68.784867)
+          (xy 157.946411 68.784867)          (xy 157.946411 68.677009)          (xy 157.62147 68.677009)          (xy 157.62147 68.462075)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 68.140066)          (xy 157.521233 68.354999)          (xy 157.408685 68.354999)          (xy 157.408685 68.140066)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.046452 67.602341)          (xy 158.046452 67.710198)          (xy 158.159 67.710198)          (xy 158.159 68.354999)
+          (xy 157.62147 68.354999)          (xy 157.62147 68.140066)          (xy 158.046452 68.140066)          (xy 158.046452 67.925132)
+          (xy 157.933905 67.925132)          (xy 157.933905 67.602341)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 66.742606)          (xy 157.521233 67.495265)          (xy 157.408685 67.495265)          (xy 157.408685 66.742606)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.159 66.850463)          (xy 158.159 67.173059)          (xy 158.046452 67.173059)          (xy 158.046452 67.280331)
+          (xy 157.62147 67.280331)          (xy 157.62147 66.95754)          (xy 158.046452 66.95754)          (xy 158.046452 66.850463)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 65.990729)          (xy 157.521233 66.63553)          (xy 157.408685 66.63553)          (xy 157.408685 65.990729)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.159 65.990729)          (xy 158.159 66.528258)          (xy 158.046452 66.528258)          (xy 158.046452 66.420596)
+          (xy 157.62147 66.420596)          (xy 157.62147 66.205662)          (xy 158.046452 66.205662)          (xy 158.046452 65.990729)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 65.023136)          (xy 157.521233 65.775795)          (xy 157.408685 65.775795)          (xy 157.408685 65.023136)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.159 65.130994)          (xy 158.159 65.45359)          (xy 158.046452 65.45359)          (xy 158.046452 65.560861)
+          (xy 157.62147 65.560861)          (xy 157.62147 65.23807)          (xy 158.046452 65.23807)          (xy 158.046452 65.130994)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.046452 64.271259)          (xy 158.159 64.271259)          (xy 158.159 64.808789)          (xy 158.046452 64.808789)
+          (xy 158.046452 64.91606)          (xy 157.521233 64.91606)          (xy 157.521233 64.808789)          (xy 157.408685 64.808789)
+          (xy 157.408685 64.378335)          (xy 157.521233 64.378335)          (xy 157.521233 64.593855)          (xy 157.621274 64.593855)
+          (xy 157.621274 64.701126)          (xy 158.046452 64.701126)          (xy 158.046452 64.486193)          (xy 157.946411 64.486193)
+          (xy 157.946411 64.378335)          (xy 157.521233 64.378335)          (xy 157.408685 64.378335)          (xy 157.408685 64.271259)
+          (xy 157.521233 64.271259)          (xy 157.521233 64.163401)          (xy 158.046452 64.163401)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.046452 63.411524)          (xy 158.159 63.411524)          (xy 158.159 63.949054)          (xy 158.046452 63.949054)
+          (xy 158.046452 64.056325)          (xy 157.521233 64.056325)          (xy 157.521233 63.949054)          (xy 157.408685 63.949054)
+          (xy 157.408685 63.5186)          (xy 157.521233 63.5186)          (xy 157.521233 63.73412)          (xy 157.621274 63.73412)
+          (xy 157.621274 63.841392)          (xy 158.046452 63.841392)          (xy 158.046452 63.626458)          (xy 157.946411 63.626458)
+          (xy 157.946411 63.5186)          (xy 157.521233 63.5186)          (xy 157.408685 63.5186)          (xy 157.408685 63.411524)
+          (xy 157.521233 63.411524)          (xy 157.521233 63.303667)          (xy 158.046452 63.303667)
+        )
+      )
+      (polygon
+        (pts
+          (xy 157.521233 62.981657)          (xy 157.521233 63.19659)          (xy 157.408685 63.19659)          (xy 157.408685 62.981657)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.046452 62.443932)          (xy 158.046452 62.551789)          (xy 158.159 62.551789)          (xy 158.159 63.19659)
+          (xy 157.62147 63.19659)          (xy 157.62147 62.981657)          (xy 158.046452 62.981657)          (xy 158.046452 62.766723)
+          (xy 157.933905 62.766723)          (xy 157.933905 62.443932)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.065316 78.027016)          (xy 159.177863 78.027016)          (xy 159.177863 77.919158)          (xy 159.390452 77.919158)
+          (xy 159.390452 78.027016)          (xy 159.503 78.027016)          (xy 159.503 78.671817)          (xy 158.965274 78.671817)
+          (xy 158.965274 78.456884)          (xy 159.065316 78.456884)          (xy 159.065316 78.24195)          (xy 158.965274 78.24195)
+          (xy 158.965274 78.134092)          (xy 159.177863 78.134092)          (xy 159.177863 78.456884)          (xy 159.390452 78.456884)
+          (xy 159.390452 78.24195)          (xy 159.290411 78.24195)          (xy 159.290411 78.134092)          (xy 159.177863 78.134092)
+          (xy 158.965274 78.134092)          (xy 158.865233 78.134092)          (xy 158.865233 78.671817)          (xy 158.752685 78.671817)
+          (xy 158.752685 78.027016)          (xy 158.865233 78.027016)          (xy 158.865233 77.919158)          (xy 159.065316 77.919158)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.865233 77.059424)          (xy 158.865233 77.274357)          (xy 158.752685 77.274357)          (xy 158.752685 77.059424)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.077822 77.059424)          (xy 159.077822 77.167281)          (xy 159.177863 77.167281)          (xy 159.177863 77.274357)
+          (xy 159.503 77.274357)          (xy 159.503 77.597149)          (xy 159.177863 77.597149)          (xy 159.177863 77.704811)
+          (xy 159.077822 77.704811)          (xy 159.077822 77.812082)          (xy 158.752685 77.812082)          (xy 158.752685 77.597149)
+          (xy 159.077822 77.597149)          (xy 159.077822 77.489877)          (xy 159.177863 77.489877)          (xy 159.177863 77.382215)
+          (xy 159.077822 77.382215)          (xy 159.077822 77.274357)          (xy 158.965274 77.274357)          (xy 158.965274 77.059424)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.390452 75.339954)          (xy 159.390452 75.447812)          (xy 159.503 75.447812)          (xy 159.503 75.877679)
+          (xy 159.390452 75.877679)          (xy 159.390452 75.985341)          (xy 158.965274 75.985341)          (xy 158.965274 75.877679)
+          (xy 158.865233 75.877679)          (xy 158.865233 75.770408)          (xy 158.752685 75.770408)          (xy 158.752685 75.339954)
+          (xy 158.865233 75.339954)          (xy 158.865233 75.662745)          (xy 158.965274 75.662745)          (xy 158.965274 75.770408)
+          (xy 159.390452 75.770408)          (xy 159.390452 75.554888)          (xy 159.277905 75.554888)          (xy 159.277905 75.339954)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.865233 74.480219)          (xy 158.865233 74.695153)          (xy 158.752685 74.695153)          (xy 158.752685 74.480219)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.503 74.480219)          (xy 159.503 75.017944)          (xy 159.390452 75.017944)          (xy 159.390452 75.125607)
+          (xy 159.290411 75.125607)          (xy 159.290411 75.232878)          (xy 158.752685 75.232878)          (xy 158.752685 75.017944)
+          (xy 159.290411 75.017944)          (xy 159.290411 74.910673)          (xy 159.390452 74.910673)          (xy 159.390452 74.803011)
+          (xy 159.290411 74.803011)          (xy 159.290411 74.695153)          (xy 158.96547 74.695153)          (xy 158.96547 74.480219)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.503 73.620484)          (xy 159.503 73.835418)          (xy 159.390452 73.835418)          (xy 159.390452 73.943276)
+          (xy 159.277905 73.943276)          (xy 159.277905 74.050938)          (xy 159.177863 74.050938)          (xy 159.177863 74.158209)
+          (xy 159.390452 74.158209)          (xy 159.390452 74.050938)          (xy 159.503 74.050938)          (xy 159.503 74.265872)
+          (xy 159.390452 74.265872)          (xy 159.390452 74.373143)          (xy 158.952769 74.373143)          (xy 158.952769 74.158209)
+          (xy 159.065316 74.158209)          (xy 159.065316 73.835418)          (xy 158.865233 73.835418)          (xy 158.865233 74.373143)
+          (xy 158.752685 74.373143)          (xy 158.752685 73.728342)          (xy 158.865233 73.728342)          (xy 158.865233 73.620484)
+          (xy 159.065316 73.620484)          (xy 159.065316 73.728342)          (xy 159.177863 73.728342)          (xy 159.177863 73.835418)
+          (xy 159.277905 73.835418)          (xy 159.277905 73.728342)          (xy 159.390452 73.728342)          (xy 159.390452 73.620484)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.865233 72.868607)          (xy 158.865233 73.513408)          (xy 158.752685 73.513408)          (xy 158.752685 72.868607)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.503 72.868607)          (xy 159.503 73.406137)          (xy 159.390452 73.406137)          (xy 159.390452 73.298475)
+          (xy 158.96547 73.298475)          (xy 158.96547 73.083541)          (xy 159.390452 73.083541)          (xy 159.390452 72.868607)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.390452 72.008872)          (xy 159.503 72.008872)          (xy 159.503 72.546402)          (xy 159.390452 72.546402)
+          (xy 159.390452 72.653673)          (xy 158.865233 72.653673)          (xy 158.865233 72.546402)          (xy 158.752685 72.546402)
+          (xy 158.752685 72.115948)          (xy 158.865233 72.115948)          (xy 158.865233 72.331468)          (xy 158.965274 72.331468)
+          (xy 158.965274 72.43874)          (xy 159.390452 72.43874)          (xy 159.390452 72.223806)          (xy 159.290411 72.223806)
+          (xy 159.290411 72.115948)          (xy 158.865233 72.115948)          (xy 158.752685 72.115948)          (xy 158.752685 72.008872)
+          (xy 158.865233 72.008872)          (xy 158.865233 71.901015)          (xy 159.390452 71.901015)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.865233 71.04128)          (xy 158.865233 71.256214)          (xy 158.752685 71.256214)          (xy 158.752685 71.04128)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.503 71.04128)          (xy 159.503 71.579005)          (xy 159.390452 71.579005)          (xy 159.390452 71.686667)
+          (xy 159.290411 71.686667)          (xy 159.290411 71.793939)          (xy 158.752685 71.793939)          (xy 158.752685 71.579005)
+          (xy 159.290411 71.579005)          (xy 159.290411 71.471734)          (xy 159.390452 71.471734)          (xy 159.390452 71.364071)
+          (xy 159.290411 71.364071)          (xy 159.290411 71.256214)          (xy 158.96547 71.256214)          (xy 158.96547 71.04128)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.390452 70.181545)          (xy 159.390452 70.289403)          (xy 159.503 70.289403)          (xy 159.503 70.826932)
+          (xy 159.390452 70.826932)          (xy 159.390452 70.934204)          (xy 159.277905 70.934204)          (xy 159.277905 70.71927)
+          (xy 159.390452 70.71927)          (xy 159.390452 70.504336)          (xy 159.277905 70.504336)          (xy 159.277905 70.396479)
+          (xy 159.177863 70.396479)          (xy 159.177863 70.826932)          (xy 159.065316 70.826932)          (xy 159.065316 70.934204)
+          (xy 158.865233 70.934204)          (xy 158.865233 70.826932)          (xy 158.752685 70.826932)          (xy 158.752685 70.289403)
+          (xy 158.865233 70.289403)          (xy 158.865233 70.181545)          (xy 158.97778 70.181545)          (xy 158.97778 70.396479)
+          (xy 158.865233 70.396479)          (xy 158.865233 70.611999)          (xy 158.97778 70.611999)          (xy 158.97778 70.71927)
+          (xy 159.065316 70.71927)          (xy 159.065316 70.289403)          (xy 159.177863 70.289403)          (xy 159.177863 70.181545)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.503 69.644602)          (xy 159.503 69.859535)          (xy 159.290411 69.859535)          (xy 159.290411 69.644602)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.390452 68.462075)          (xy 159.390452 68.569933)          (xy 159.503 68.569933)          (xy 159.503 69.107463)
+          (xy 159.390452 69.107463)          (xy 159.390452 69.214734)          (xy 159.277905 69.214734)          (xy 159.277905 68.999801)
+          (xy 159.390452 68.999801)          (xy 159.390452 68.784867)          (xy 159.277905 68.784867)          (xy 159.277905 68.677009)
+          (xy 159.177863 68.677009)          (xy 159.177863 69.107463)          (xy 159.065316 69.107463)          (xy 159.065316 69.214734)
+          (xy 158.865233 69.214734)          (xy 158.865233 69.107463)          (xy 158.752685 69.107463)          (xy 158.752685 68.569933)
+          (xy 158.865233 68.569933)          (xy 158.865233 68.462075)          (xy 158.97778 68.462075)          (xy 158.97778 68.677009)
+          (xy 158.865233 68.677009)          (xy 158.865233 68.892529)          (xy 158.97778 68.892529)          (xy 158.97778 68.999801)
+          (xy 159.065316 68.999801)          (xy 159.065316 68.569933)          (xy 159.177863 68.569933)          (xy 159.177863 68.462075)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.865233 67.602341)          (xy 158.865233 67.817274)          (xy 158.752685 67.817274)          (xy 158.752685 67.602341)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.503 67.602341)          (xy 159.503 68.140066)          (xy 159.390452 68.140066)          (xy 159.390452 68.247728)
+          (xy 159.290411 68.247728)          (xy 159.290411 68.354999)          (xy 158.752685 68.354999)          (xy 158.752685 68.140066)
+          (xy 159.290411 68.140066)          (xy 159.290411 68.032794)          (xy 159.390452 68.032794)          (xy 159.390452 67.925132)
+          (xy 159.290411 67.925132)          (xy 159.290411 67.817274)          (xy 158.96547 67.817274)          (xy 158.96547 67.602341)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.065316 66.742606)          (xy 159.065316 66.850463)          (xy 159.177863 66.850463)          (xy 159.177863 67.280331)
+          (xy 159.390452 67.280331)          (xy 159.390452 67.173059)          (xy 159.503 67.173059)          (xy 159.503 67.387993)
+          (xy 159.390452 67.387993)          (xy 159.390452 67.495265)          (xy 158.96547 67.495265)          (xy 158.96547 67.280331)
+          (xy 159.065316 67.280331)          (xy 159.065316 66.95754)          (xy 158.865233 66.95754)          (xy 158.865233 67.495265)
+          (xy 158.752685 67.495265)          (xy 158.752685 66.850463)          (xy 158.865233 66.850463)          (xy 158.865233 66.742606)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.065316 65.882871)          (xy 159.065316 65.990729)          (xy 159.177863 65.990729)          (xy 159.177863 66.420596)
+          (xy 159.390452 66.420596)          (xy 159.390452 66.313325)          (xy 159.503 66.313325)          (xy 159.503 66.528258)
+          (xy 159.390452 66.528258)          (xy 159.390452 66.63553)          (xy 158.96547 66.63553)          (xy 158.96547 66.420596)
+          (xy 159.065316 66.420596)          (xy 159.065316 66.097805)          (xy 158.865233 66.097805)          (xy 158.865233 66.63553)
+          (xy 158.752685 66.63553)          (xy 158.752685 65.990729)          (xy 158.865233 65.990729)          (xy 158.865233 65.882871)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.865233 65.560861)          (xy 158.865233 65.775795)          (xy 158.752685 65.775795)          (xy 158.752685 65.560861)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.390452 65.023136)          (xy 159.390452 65.130994)          (xy 159.503 65.130994)          (xy 159.503 65.775795)
+          (xy 158.96547 65.775795)          (xy 158.96547 65.560861)          (xy 159.390452 65.560861)          (xy 159.390452 65.345928)
+          (xy 159.277905 65.345928)          (xy 159.277905 65.023136)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.865233 64.271259)          (xy 158.865233 64.91606)          (xy 158.752685 64.91606)          (xy 158.752685 64.271259)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.503 64.271259)          (xy 159.503 64.808789)          (xy 159.390452 64.808789)          (xy 159.390452 64.701126)
+          (xy 158.96547 64.701126)          (xy 158.96547 64.486193)          (xy 159.390452 64.486193)          (xy 159.390452 64.271259)
+        )
+      )
+      (polygon
+        (pts
+          (xy 158.865233 63.303667)          (xy 158.865233 64.056325)          (xy 158.752685 64.056325)          (xy 158.752685 63.303667)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.390452 63.303667)          (xy 159.390452 63.411524)          (xy 159.503 63.411524)          (xy 159.503 63.949054)
+          (xy 159.390452 63.949054)          (xy 159.390452 64.056325)          (xy 158.96547 64.056325)          (xy 158.96547 63.841392)
+          (xy 159.065316 63.841392)          (xy 159.065316 63.5186)          (xy 159.177863 63.5186)          (xy 159.177863 63.841392)
+          (xy 159.277905 63.841392)          (xy 159.277905 63.73412)          (xy 159.390452 63.73412)          (xy 159.390452 63.5186)
+          (xy 159.277905 63.5186)          (xy 159.277905 63.303667)
+        )
+      )
+      (polygon
+        (pts
+          (xy 159.390452 62.443932)          (xy 159.390452 62.551789)          (xy 159.503 62.551789)          (xy 159.503 63.089319)
+          (xy 159.390452 63.089319)          (xy 159.390452 63.19659)          (xy 159.277905 63.19659)          (xy 159.277905 62.981657)
+          (xy 159.390452 62.981657)          (xy 159.390452 62.766723)          (xy 159.277905 62.766723)          (xy 159.277905 62.658865)
+          (xy 159.177863 62.658865)          (xy 159.177863 63.089319)          (xy 159.065316 63.089319)          (xy 159.065316 63.19659)
+          (xy 158.865233 63.19659)          (xy 158.865233 63.089319)          (xy 158.752685 63.089319)          (xy 158.752685 62.551789)
+          (xy 158.865233 62.551789)          (xy 158.865233 62.443932)          (xy 158.97778 62.443932)          (xy 158.97778 62.658865)
+          (xy 158.865233 62.658865)          (xy 158.865233 62.874385)          (xy 158.97778 62.874385)          (xy 158.97778 62.981657)
+          (xy 159.065316 62.981657)          (xy 159.065316 62.551789)          (xy 159.177863 62.551789)          (xy 159.177863 62.443932)
+        )
+      )
+    )
   )
   (gr_text_box "GND\nIN3\nIN2\nIN1\nIN0"
     (start 147.7 60.8) (end 151 69.6) (layer "B.SilkS") (tstamp 26aad620-8fe6-4020-aeea-11cdae40c5db)
@@ -14636,7 +15104,6 @@
   (segment (start 154.872165 113.107341) (end 153.95 112.185176) (width 0.6) (layer "B.Cu") (net 1) (tstamp 164d2385-1d98-4ed7-b79f-f5fab46fb1e8))
   (segment (start 163.4 102.85) (end 164.2 102.05) (width 0.6) (layer "B.Cu") (net 1) (tstamp 1923497d-8dc6-4824-9286-79aa0be0d67d))
   (segment (start 126.9 114.125) (end 126.9 109) (width 0.6) (layer "B.Cu") (net 1) (tstamp 2f97a2ec-d4b2-46d7-bc64-9631893eaa2b))
-  (segment (start 126.9 107.225) (end 126.9 109) (width 0.6) (layer "B.Cu") (net 1) (tstamp 36cf284f-c237-4bfb-9554-c642a1caa59c))
   (segment (start 157.325 103.95) (end 158.45 102.825) (width 0.6) (layer "B.Cu") (net 1) (tstamp 40479edd-10d0-4b3f-9ed3-b97afe7a5f4a))
   (segment (start 126.9 97.8) (end 127.05 97.65) (width 0.6) (layer "B.Cu") (net 1) (tstamp 48b2b9ef-f482-4d4a-9f3c-edc50bb8357b))
   (segment (start 164.75 99.6) (end 164.2 100.15) (width 0.6) (layer "B.Cu") (net 1) (tstamp 55f7ff70-ec86-4b76-ac4f-c32346d75431))
@@ -14789,7 +15256,6 @@
   (segment (start 161.125 95.445) (end 161.125 94.395) (width 0.2) (layer "B.Cu") (net 2) (tstamp b74dd495-d96b-4775-ada0-4367c3a9be3d))
   (segment (start 134.8 112.6) (end 134.7 112.7) (width 0.2) (layer "B.Cu") (net 2) (tstamp b79405fe-b8e1-4880-9150-94d41186a712))
   (segment (start 156.5 87.2) (end 155.56 86.26) (width 0.6) (layer "B.Cu") (net 2) (tstamp bb8639cf-107e-4c55-9617-10aaf8d64732))
-  (segment (start 153.475 97.625) (end 153.5 97.6) (width 0.2) (layer "B.Cu") (net 2) (tstamp bd06a58a-37d5-4389-ad74-dc47a78095ce))
   (segment (start 148.45 82.425) (end 148.475 82.4) (width 0.2) (layer "B.Cu") (net 2) (tstamp c0753942-e096-4bcd-a023-1a29f105fef6))
   (segment (start 150.7 94.525) (end 152.1 94.525) (width 0.2) (layer "B.Cu") (net 2) (tstamp c27926a3-e70d-4c29-a924-28de34306d23))
   (segment (start 143.5 92.575) (end 142.125 92.575) (width 0.2) (layer "B.Cu") (net 2) (tstamp c2e2caf7-26f0-420e-a037-7f285d33a490))
@@ -15121,7 +15587,6 @@
   (segment (start 135.9 108.5) (end 134.410785 108.5) (width 0.2) (layer "In1.Cu") (net 41) (tstamp 2360d6de-b721-4fd7-8541-be6305c94449))
   (segment (start 136.6 110.098029) (end 136.6 108.9) (width 0.2) (layer "In1.Cu") (net 41) (tstamp 335ec90d-af0b-424c-af49-372aae2c6fcd))
   (segment (start 128.9 102.989214) (end 128.9 74.6295) (width 0.2) (layer "In1.Cu") (net 41) (tstamp 37f8b0a4-8ef1-4e35-93d9-414f8e524791))
-  (segment (start 137.32249 110.639563) (end 137.141534 110.639563) (width 0.2) (layer "In1.Cu") (net 41) (tstamp 470469ad-9118-4450-89d5-1c223d07d9ae))
   (segment (start 136.2 108.5) (end 135.9 108.5) (width 0.2) (layer "In1.Cu") (net 41) (tstamp 52245234-5d68-4e4e-95a0-84c4f559074f))
   (segment (start 134.410785 108.5) (end 134.176471 108.265685) (width 0.2) (layer "In1.Cu") (net 41) (tstamp 70313ef1-6fea-4dac-8305-52eee0793e77))
   (segment (start 137.2 110.698029) (end 136.6 110.098029) (width 0.2) (layer "In1.Cu") (net 41) (tstamp 7c04d9e8-2c70-4648-b286-678a21aebbf7))
@@ -15132,7 +15597,6 @@
   (segment (start 134.176471 108.265685) (end 128.9 102.989214) (width 0.2) (layer "In1.Cu") (net 41) (tstamp aadea4a4-aeb1-4e7f-85ad-b19373b319e8))
   (segment (start 128.5 72) (end 127.8705 72) (width 0.2) (layer "In1.Cu") (net 41) (tstamp beb27d62-21b7-43f9-9dba-16eb229dd748))
   (segment (start 128.9 72.4) (end 128.6 72.1) (width 0.2) (layer "In1.Cu") (net 41) (tstamp c203d148-4d35-4fb9-9f5c-33ae499ef5a3))
-  (segment (start 137.2 110.7) (end 137.2 110.698029) (width 0.2) (layer "In1.Cu") (net 41) (tstamp e706f219-dd34-4505-9cba-bf303d1186c1))
   (segment (start 137.731027 110.231027) (end 137.912054 110.05) (width 0.2) (layer "B.Cu") (net 41) (tstamp 1677e668-1036-4116-ac85-e8f6fb3e2792))
   (segment (start 142.55 108.631372) (end 142.55 106.575) (width 0.2) (layer "B.Cu") (net 41) (tstamp 1f1979b5-db2f-418d-b301-1a77c74c45ff))
   (segment (start 137.262054 110.7) (end 137.2 110.7) (width 0.2) (layer "B.Cu") (net 41) (tstamp 3fb24282-30c1-46c1-a105-7c7b029ad8af))
