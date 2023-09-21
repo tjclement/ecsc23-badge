@@ -22,7 +22,7 @@ add_executable(glitcher
     output.c
     glitch.c
 )
-add_definitions(-DPICO_DEFAULT_LED_PIN=15)
+add_definitions(-DPICO_DEFAULT_LED_PIN=12)
 target_include_directories(glitcher PUBLIC
 ${CMAKE_CURRENT_LIST_DIR})
 

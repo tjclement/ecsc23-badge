@@ -60,9 +60,9 @@ enum  {
 #define MAX_PARAMETER_LENGTH 20
 #define VERSION "0.0.1"
 
-#define LED1 (12)
-#define LED2 (13)
-#define LED3 (14)
+#define LED_TRIGGER (13)
+#define LED_ARM (15)
+#define LED_USB (12)
 
 // Enum to represent different SCPI commands
 typedef enum {
@@ -111,12 +111,12 @@ int main(void)
   board_init();
   tusb_init();
   
-  gpio_init(LED1);
-  gpio_set_dir(LED1, GPIO_OUT);
-  gpio_init(LED2);
-  gpio_set_dir(LED2, GPIO_OUT);
-  gpio_init(LED3);
-  gpio_set_dir(LED3, GPIO_OUT);
+  gpio_init(LED_TRIGGER);
+  gpio_set_dir(LED_TRIGGER, GPIO_OUT);
+  gpio_init(LED_ARM);
+  gpio_set_dir(LED_ARM, GPIO_OUT);
+  gpio_init(LED_USB);
+  gpio_set_dir(LED_USB, GPIO_OUT);
 
   cdc_sump_init();
   adc_pio_init();
@@ -244,7 +244,7 @@ void gpio_callback(uint gpio, uint32_t events) {
     if (irq_fired) return;
     trigger();
     irq_fired = true;
-    gpio_put(LED2, 0);
+    gpio_put(LED_ARM, 0);
 }
 
 void configure_trigger(bool fall, int pin) {
@@ -255,14 +255,14 @@ void configure_trigger(bool fall, int pin) {
   }
   irq_fired = false;
   gpio_set_irq_enabled_with_callback(pin, level, true, gpio_callback);
-  gpio_put(LED2, 1);
+  gpio_put(LED_ARM, 1);
 }
 
 void trigger() {
   gpio_pio_start();
   adc_pio_start();
   glitch_trigger();
-  gpio_put(LED1, !gpio_get(LED1));
+  gpio_put(LED_TRIGGER, !gpio_get(LED_TRIGGER));
 }
 
 void tud_cdc_rx_wanted_cb(uint8_t itf, char wantedchar) {

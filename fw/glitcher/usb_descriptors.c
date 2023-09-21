@@ -175,10 +175,10 @@ char const* string_desc_arr [] =
 {
   (const char[]) { 0x09, 0x04 }, // 0: is supported language is English (0x0409)
   "Curious Supplies",            // 1: Manufacturer
-  "Sparkle",                     // 2: Product
+  "Curious Bolt",                // 2: Product
   serial,                        // 3: Serials, uses the flash ID
-  "Sparkle Console",             // 4: CDC interface for UART communication
-  "Sparkle API",                 // 5: CDC interface for controlling Sparkle
+  "Curious Bolt Console",        // 4: CDC interface for UART communication
+  "Curious Bolt API",            // 5: CDC interface for controlling Sparkle
 };
 
 static uint16_t _desc_str[32];

@@ -166,12 +166,12 @@ class Scope():
     def __init__(self, port=None) -> None:
         if port is None:
             ports = comports()
-            matches = [p.device for p in ports if p.interface == "Sparkle API"]
+            matches = [p.device for p in ports if p.interface == "Curious Bolt API"]
             if len(matches) != 1:
-                matches = [p.device for p in ports if p.product == "Sparkle"]
+                matches = [p.device for p in ports if p.product == "Curious Bolt"]
                 matches.reverse()
                 if len(matches) != 2:
-                    raise IOError('Sparkle device not found. Please check if it\'s connected, and pass its port explicitly if it is.')
+                    raise IOError('Curious Bolt device not found. Please check if it\'s connected, and pass its port explicitly if it is.')
             port = matches[0]
 
         self._port = port
