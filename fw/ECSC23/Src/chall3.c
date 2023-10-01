@@ -22,6 +22,9 @@ void chall3(void) {
   uint8_t flag_encrypted[FLAG_BYTESIZE] = {
     0x4B, 0xD4, 0x77, 0xC6, 0x3C, 0x41, 0x61, 0xA4, 0xE3, 0x96, 0xDB, 0x1D, 0x08, 0x34, 0x99, 0xD7
   };
+
+  if(chosen_chall != 3) { return; }
+
   uart_printf("Checking EEPROM integrity\r\n");
 
   crash_on_debugger();
@@ -32,10 +35,14 @@ void chall3(void) {
     return;
   }
 
+  if(chosen_chall != 3) { return; }
+
   crash_on_debugger();
   crash_on_fpb();
   uint32_t crc = crc32buf((char*)buf, DATA_LEN);
   uint32_t* crc_saved = (uint32_t*) &buf[DATA_LEN];
+
+  if(chosen_chall != 3) { return; }
 
   crash_on_debugger();
   crash_on_fpb();
@@ -50,6 +57,8 @@ void chall3(void) {
     return;
   }
 
+  if(chosen_chall != 3) { return; }
+
   crash_on_debugger();
   crash_on_fpb();
   uart_printf("Checking access protection\r\n");
@@ -62,14 +71,20 @@ void chall3(void) {
     return;
   }
 
+  if(chosen_chall != 3) { return; }
+
   if (buf[1] != 0x00) {
     uart_printf("Protection bits set (0x%02X), refusing to continue. Stopping challenge..\r\n", buf[1]);
     return;
   }
 
+  if(chosen_chall != 3) { return; }
+
   crash_on_debugger();
   crash_on_fpb();
   uart_printf("Protection bits are clear, proceeding to print flag:\r\n");
+
+  if(chosen_chall != 3) { return; }
 
   crash_on_debugger();
   crash_on_fpb();
@@ -80,6 +95,9 @@ void chall3(void) {
     uart_printf("Failed to read data from EEPROM, stopping challenge..\r\n");
     return;
   }
+
+  if(chosen_chall != 3) { return; }
+
   crash_on_debugger();
   crash_on_fpb();
   HAL_GPIO_WritePin(GPIOA, LED_SUCCESS_Pin, GPIO_PIN_SET);

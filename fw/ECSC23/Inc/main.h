@@ -83,6 +83,7 @@ void Error_Handler(void);
 #define SW_CHALL4_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
+extern volatile int chosen_chall;
 void SystemClock_Config(void);
 /* USER CODE END Private defines */
 

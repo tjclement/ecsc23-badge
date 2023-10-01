@@ -35,12 +35,22 @@ void print_flag(uint8_t *contents) {
    * chall4 - b'LC;R\xcfZ$N\x10\x8a\xac\xa4O)(\xc5'
    * */
 
-  uint32_t uid = HAL_GetUIDw2();
+  uint32_t uid0 = HAL_GetUIDw0();
+  uint32_t uid1 = HAL_GetUIDw1();
+  uint32_t uid2 = HAL_GetUIDw2();
   uint32_t crc = crc32buf((char*)contents, FLAG_BYTESIZE);
-  crc = updateCRC32(((uint8_t*)&uid)[0], crc);
-  crc = updateCRC32(((uint8_t*)&uid)[1], crc);
-  crc = updateCRC32(((uint8_t*)&uid)[2], crc);
-  crc = updateCRC32(((uint8_t*)&uid)[3], crc);
+  crc = updateCRC32(((uint8_t*)&uid0)[0], crc);
+  crc = updateCRC32(((uint8_t*)&uid0)[1], crc);
+  crc = updateCRC32(((uint8_t*)&uid0)[2], crc);
+  crc = updateCRC32(((uint8_t*)&uid0)[3], crc);
+  crc = updateCRC32(((uint8_t*)&uid1)[0], crc);
+  crc = updateCRC32(((uint8_t*)&uid1)[1], crc);
+  crc = updateCRC32(((uint8_t*)&uid1)[2], crc);
+  crc = updateCRC32(((uint8_t*)&uid1)[3], crc);
+  crc = updateCRC32(((uint8_t*)&uid2)[0], crc);
+  crc = updateCRC32(((uint8_t*)&uid2)[1], crc);
+  crc = updateCRC32(((uint8_t*)&uid2)[2], crc);
+  crc = updateCRC32(((uint8_t*)&uid2)[3], crc);
 
   uart_printf("ctf{") ;
   for (int i = 0; i < FLAG_BYTESIZE; i++) {

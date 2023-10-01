@@ -9,7 +9,7 @@
 
 #define KEY4_OFFSET (3 * 16)
 
-_Noreturn __attribute__ ((used))
+__attribute__ ((used))
 void print_chall4_flag(void) {
   uart_printf("chall4 flag print function starts here");
 
@@ -46,6 +46,8 @@ __attribute__ ((optimize("-O0")))
 void chall4() {
   void (*func)(void) = print_chall4_flag;
   if (func != NULL) {
+    if(chosen_chall != 4) { return; }
+
     uart_printf("A function that prints the flag is present in the firmware. Find it, and execute it.");
   }
 }

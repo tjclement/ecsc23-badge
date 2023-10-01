@@ -51,7 +51,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+volatile int chosen_chall = -1;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -95,7 +95,8 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-//  protect_flash_readout();
+
+#ifdef DEBUG
   uart_printf("DEBUG - Build timestamp - %s@%s\r\n", __DATE__, __TIME__);
 
   uint32_t uid0 = HAL_GetUIDw0();
@@ -104,27 +105,46 @@ int main(void)
 
   uart_printf("DEBUG - HW UID: 0x%08X 0x%08X 0x%08X\r\n", uid0, uid1, uid2);
   uart_printf("DEBUG - FPB regs: 0x%08X 0x%08X 0x%08X 0x%08X\r\n", *(uint32_t*)0xe0002000, *(uint32_t*)0xe0002004, *(uint32_t*)0xe0002008, *(uint32_t*)0xe000200c);
-  uint32_t buttons;
+#endif
 
   check:
-  if (HAL_GPIO_ReadPin(SW_CHALL1_GPIO_Port, SW_CHALL1_Pin)) {
+  if (HAL_GPIO_ReadPin(SW_CHALL1_GPIO_Port, SW_CHALL1_Pin) && chosen_chall == -1) {
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
+    if (chosen_chall != -1) { goto check; }
     uart_printf("Starting challenge 1\r\n");
+    if (chosen_chall != -1) { goto check; }
+    chosen_chall = 1;
     chall1();
-  } else if (HAL_GPIO_ReadPin(SW_CHALL2_GPIO_Port, SW_CHALL2_Pin)) {
+  } else if (HAL_GPIO_ReadPin(SW_CHALL2_GPIO_Port, SW_CHALL2_Pin) && chosen_chall == -1) {
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
+    if (chosen_chall != -1) { goto check; }
     uart_printf("Starting challenge 2\r\n");
+    if (chosen_chall != -1) { goto check; }
+    chosen_chall = 2;
     chall2();
-  } else if (HAL_GPIO_ReadPin(SW_CHALL3_GPIO_Port, SW_CHALL3_Pin)) {
+  } else if (HAL_GPIO_ReadPin(SW_CHALL3_GPIO_Port, SW_CHALL3_Pin) && chosen_chall == -1) {
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
+    if (chosen_chall != -1) { goto check; }
     uart_printf("Starting challenge 3\r\n");
+    if (chosen_chall != -1) { goto check; }
+    chosen_chall = 3;
     chall3();
-  } else if (HAL_GPIO_ReadPin(SW_CHALL4_GPIO_Port, SW_CHALL4_Pin)) {
+  } else if (HAL_GPIO_ReadPin(SW_CHALL4_GPIO_Port, SW_CHALL4_Pin) && chosen_chall == -1) {
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
+    if (chosen_chall != -1) { goto check; }
     uart_printf("Starting challenge 4\r\n");
+    if (chosen_chall != -1) { goto check; }
+    chosen_chall = 4;
     chall4();
   } else {
     uart_printf("Hold one of the 4 challenge buttons to start them\r\n");
+
+    uint8_t first_byte;
+    if (eeprom_read(&first_byte, EEPROM2_ADDR, EEPROM_LEN-1, 1) == HAL_OK && first_byte == 0xFF) {
+      uart_printf("EEPROM contents are corrupted. Restoring.\r\n");
+      eeprom_restore();
+    }
+
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_SET);
     HAL_Delay(500);
     HAL_GPIO_WritePin(GPIOA, LED_RUNNING_Pin, GPIO_PIN_RESET);
