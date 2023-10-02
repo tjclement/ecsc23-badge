@@ -1,33 +1,17 @@
 ## Challenge 1
 
-In this chall, the flag is protected by a check that is never true:
+In this challenge, the flag gets loaded into RAM in plaintext. There should be no way to extract it, as JTAG and SWD have been disabled.
 
-```c
-  volatile bool check = true;
-  uint32_t cnt = 0;
-  int i = 0;
-  int j;
-
-  while (true) {
-    cnt = 0;
-    for (i = 0; i < 1000; i++) {
-      for (j = 0; j < 1000; j++) {
-        cnt++;
-        if (!check) {
-          // Flag gets printed
-        }
-      }
-    }
-    uart_printf("%u %u %u\r\n", i, j, cnt);
-  }
-```
-
-By glitching the target board's VCC with the correct duration, register values can be corrupted and instructions can be skipped, causing the flag to be printed regardless.
+STM32F1 series have a design vulnerability though, where the debugging peripheral can only be disabled in software, and not through hardware fuse bits. This means that it is still accessible when an attacker can force booting from bootrom or SRAM.
 
 ## Repro steps
-- Connect the glitcher's GND (next to the glitch source) to GND on the target (e.g. the middle pin of the 3-pin SWD header).
-- Connect the glitcher's glitch source pin to the targets VCC header (either of the two VCC pins on the target are fine).
-- Find the smallest glitch duration that triggers a complete reset of the target board, using e.g. `python3 -c "from scope import Scope;s=Scope();s.glitch.repeat=60;s.trigger()"` (s.glitch.repeat is the number of 8.3ns clock cycles to keep the glitch asserted).
-- Start the challenge by holding the chall1 button, and slowly walk down the glitch duration such that the target does not reset, but `i`, `j`, and `cnt` do get corrupted. Running the challenge long enough with these corruptions results in getting the flag: ![images/1.png](images/1.png)
-
-Note: if corruption does occur, but the flag doesn't get printed, try stopping the glitch, power cycling the target board, run chall1, and start glitching again.
+- Start chall2, and notice that the flag is now in SRAM.
+- Force booting into the bootrom bootloader by holding BOOT0 and pressing RST. JTAG/SWD is now accessible again.
+- Attach the ST-Link debugger to SWDIO/GND/SWCLK on the target board, and connect to your computer via USB.
+- Install `pyocd` using `pip3 install pyocd`.
+- Run pyocd in the command mode using `pyocd commander` 
+![images/2_1.png](images/2_1.png)
+- Dump the entire SRAM 
+![images/2_2.png](images/2_2.png)
+- Search for the flag preamble, and see that the flag is right there 
+![images/2_3.png](images/2_3.png)
