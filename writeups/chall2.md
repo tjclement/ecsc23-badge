@@ -1,6 +1,6 @@
 ## Challenge 2
 
-In this chall, the flag is protected by a check that is never true:
+In this chall, the flag is protected by a check that is never false:
 
 ```c
   volatile bool check = true;
@@ -27,7 +27,7 @@ By glitching the target board's VCC with the correct duration, register values c
 ## Repro steps
 - Connect the glitcher's GND (next to the glitch source) to GND on the target (e.g. the middle pin of the 3-pin SWD header).
 - Connect the glitcher's glitch source pin to the targets VCC header (either of the two VCC pins on the target are fine).
-- Find the smallest glitch duration that triggers a complete reset of the target board, using e.g. `python3 -c "from scope import Scope;s=Scope();s.glitch.repeat=60;s.trigger()"` (s.glitch.repeat is the number of 8.3ns clock cycles to keep the glitch asserted).
-- Start the challenge by holding the chall1 button, and slowly walk down the glitch duration such that the target does not reset, but `i`, `j`, and `cnt` do get corrupted. Running the challenge long enough with these corruptions results in getting the flag: ![images/1.png](images/1.png)
+- Find the smallest glitch duration that triggers a complete reset of the target board, using e.g. `python3 -c "from scope import Scope;s=Scope();s.glitch.repeat=92;s.trigger()"` (s.glitch.repeat is the number of 8.3ns clock cycles to keep the glitch asserted).
+- Start the challenge by holding the chall2 button, and slowly walk down the glitch duration such that the target does not reset, but `i`, `j`, and `cnt` do get corrupted. Running the challenge long enough with these corruptions results in getting the flag: ![images/1.png](images/1.png)
 
 Note: if corruption does occur, but the flag doesn't get printed, try stopping the glitch, power cycling the target board, run chall1, and start glitching again.
