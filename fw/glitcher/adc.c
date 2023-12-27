@@ -59,12 +59,12 @@ void adc_pio_init(void) {
   pio_claim_sm_mask(ADC_PIO, 1u << ADC_PIO_SM);
   adc_pio_program();
   init_gpio_adc();
-  // loop the IN instruction forewer (8-bit and 16-bit version)
+  // loop the IN instruction forever (8-bit and 16-bit version)
   c = pio_get_default_sm_config();
   sm_config_set_set_pins(&c, ADC_CLK, 1);
   sm_config_set_in_pins(&c, ADC_D0);
   //sm_config_set_wrap(&c, adc_pio_prog_offset, adc_pio_prog_offset+3);
-  sm_config_set_clkdiv_int_frac(&c, 1, 64); //100MHz
+  sm_config_set_clkdiv_int_frac(&c, 2, 64); //100MHz
   sm_config_set_in_shift(&c, false, true, 10);
   pio_sm_set_consecutive_pindirs(ADC_PIO, ADC_PIO_SM, ADC_CLK, 1, true);
 

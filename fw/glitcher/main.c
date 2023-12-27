@@ -111,6 +111,8 @@ void configure_trigger(bool fall, int pin);
 /*------------- MAIN -------------*/
 int main(void)
 {
+  set_sys_clock_khz(250000, true);
+
   board_init();
   tusb_init();
   
@@ -188,15 +190,15 @@ int parse_scpi_command(const char *command) {
         tud_cdc_n_write_flush(COMMAND_ITF);
       } else {
         char buf[64];
-        for (int i = 0; i < ADC_SAMPLES; i++) {
-          snprintf(buf, 63, "%u,", data[i]);
-          tud_cdc_n_write(COMMAND_ITF, buf, strlen(buf));
+        snprintf(buf, 63, "OK: %u\n", ADC_SAMPLES * sizeof(uint16_t));
+        tud_cdc_n_write(COMMAND_ITF, buf, strlen(buf));
+        tud_cdc_n_write_flush(COMMAND_ITF);
+
+        for (int i = 0; i < ADC_SAMPLES; i += 64){
+          tud_cdc_n_write(COMMAND_ITF, &data[i], 64 * sizeof(uint16_t));
           tud_cdc_n_write_flush(COMMAND_ITF);
           tud_task();
         }
-        tud_cdc_n_write_char(COMMAND_ITF, '\n');
-        tud_cdc_n_write_flush(COMMAND_ITF);
-        tud_task();
       }
       }
       return 0;

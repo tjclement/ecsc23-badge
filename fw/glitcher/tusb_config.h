@@ -94,8 +94,8 @@
 #define CFG_TUD_ENDPOINT0_SIZE    64
 #endif
 
-#define CFG_TUD_CDC_RX_BUFSIZE (256)
-#define CFG_TUD_CDC_TX_BUFSIZE (256)
+#define CFG_TUD_CDC_RX_BUFSIZE (512)
+#define CFG_TUD_CDC_TX_BUFSIZE (512)
 
 
 //------------- CLASS -------------//
