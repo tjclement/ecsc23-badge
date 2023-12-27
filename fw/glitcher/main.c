@@ -28,6 +28,7 @@
 #include <string.h>
 
 #include "pico/stdlib.h"
+#include "pico/bootrom.h"
 #include "bsp/board.h"
 #include "tusb_config.h"
 #include "tusb.h"
@@ -78,6 +79,7 @@ typedef enum {
     SCPI_GLITCH_DELAY,
     SCPI_VERSION,
     // Add more SCPI commands here as needed
+    SCPI_BOOTLOADER,
     SCPI_COMMAND_COUNT // Always keep this at the end to track the number of commands
 } SCPI_Command;
 
@@ -96,6 +98,7 @@ const char* scpi_command_strings[] = {
     ":VERSION?",
     ""
     // Add more SCPI commands here as needed
+    ":BOOTLOADER",
 };
 
 static uint32_t blink_interval_ms = BLINK_NOT_MOUNTED;
@@ -231,6 +234,9 @@ int parse_scpi_command(const char *command) {
       tud_cdc_n_write(COMMAND_ITF, VERSION, strlen(VERSION));
       tud_cdc_n_write_char(COMMAND_ITF, '\n');
       tud_cdc_n_write_flush(COMMAND_ITF);
+      return 0;
+      case SCPI_BOOTLOADER:
+      reset_usb_boot(0, 0);
       return 0;
     }
 
